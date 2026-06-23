@@ -82,32 +82,21 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
 
-      gsap.set('.ad-card', { opacity: 0, x: 80, rotate: 10, scale: 0.88 })
-      gsap.set('.hero-word', { opacity: 0, y: -50, rotateX: 15 })
-      gsap.set('.hero-sub', { opacity: 0, y: -20 })
-      gsap.set('.hero-cta', { opacity: 0, y: -15 })
-      gsap.set('.hero-stat', { opacity: 0, y: -10 })
-
-      gsap.fromTo('.hero-word',
-        { opacity: 0, y: -50, rotateX: 15 },
-        { opacity: 1, y: 0, rotateX: 0, duration: 1, stagger: 0.1, ease: 'power4.out', delay: 0.3 }
+      gsap.from('.hero-word',
+        { opacity: 0, y: -50, rotateX: 15, duration: 1, stagger: 0.1, ease: 'power4.out', delay: 0.3, clearProps: 'all' }
       )
-      gsap.fromTo('.hero-sub',
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.9 }
+      gsap.from('.hero-sub',
+        { opacity: 0, y: -20, duration: 0.8, ease: 'power3.out', delay: 0.9, clearProps: 'all' }
       )
-      gsap.fromTo('.hero-cta',
-        { opacity: 0, y: -15 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out', delay: 1.1 }
+      gsap.from('.hero-cta',
+        { opacity: 0, y: -15, duration: 0.6, stagger: 0.1, ease: 'power3.out', delay: 1.1, clearProps: 'all' }
       )
-      gsap.fromTo('.hero-stat',
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out', delay: 1.4 }
+      gsap.from('.hero-stat',
+        { opacity: 0, y: -10, duration: 0.5, stagger: 0.08, ease: 'power3.out', delay: 1.4, clearProps: 'all' }
       )
 
-      gsap.fromTo('.ad-card',
-        { opacity: 0, x: 80, rotate: 10, scale: 0.88 },
-        { opacity: 1, x: 0, rotate: 0, scale: 1, duration: 1, stagger: 0.14, ease: 'power4.out', delay: 0.7 }
+      gsap.from('.ad-card',
+        { opacity: 0, x: 80, rotate: 10, scale: 0.88, duration: 1, stagger: 0.14, ease: 'power4.out', delay: 0.7, clearProps: 'opacity,x,rotate,scale' }
       )
 
       const tl = gsap.timeline({
