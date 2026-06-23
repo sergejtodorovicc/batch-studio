@@ -221,3 +221,77 @@ html.lenis, html.lenis body { height: auto; }
 /* Sticky section wrapper */
 .sticky-section { position: relative; }
 .sticky-inner { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+
+/* ─── MOBILE OVERRIDES ──────────────────────────────────────── */
+@media (max-width: 767px) {
+
+  /* Disable scroll-pinning on mobile — sections flow normally */
+  .sticky-section { height: auto !important; }
+  .sticky-inner {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 80px 0;
+  }
+
+  /* Force all GSAP opacity-0 elements visible on mobile */
+  .hero-word, .hero-sub, .hero-cta, .hero-stat,
+  .sp-headline, .metric-card, .adv-card,
+  .cta-line-red, .cta-line-2, .cta-sub, .cta-buttons, .cta-glow,
+  .founder-mask .founder-line,
+  .shift-card-0, .shift-card-1, .shift-card-2, .shift-card-3,
+  .shift-card-body-0, .shift-card-body-1, .shift-card-body-2, .shift-card-body-3,
+  .process-card-0, .process-card-1, .process-card-2,
+  .process-card-3, .process-card-4, .process-card-5,
+  .cs-panel-0,
+  .stage-01-content, .stage-02-content, .stage-03-content,
+  .stage-04-content, .stage-05-content,
+  .old-item-0, .old-item-1, .old-item-2, .old-item-3, .old-item-4, .old-item-5,
+  .new-item-0, .new-item-1, .new-item-2, .new-item-3, .new-item-4, .new-item-5,
+  .savings-badge, .problem-content {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Services stack: show all cards stacked, not animated */
+  .services-stack { height: auto !important; position: relative !important; }
+  .service-card-full-0, .service-card-full-1, .service-card-full-2,
+  .service-card-full-3, .service-card-full-4 {
+    position: relative !important;
+    inset: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    height: auto !important;
+    margin-bottom: 12px;
+    z-index: auto !important;
+  }
+  .service-card-body-0, .service-card-body-1, .service-card-body-2,
+  .service-card-body-3, .service-card-body-4 {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Process: hide the horizontal timeline, show cards stacked */
+  .process-card-0, .process-card-1, .process-card-2,
+  .process-card-3, .process-card-4, .process-card-5 {
+    width: 100% !important;
+    opacity: 1 !important;
+    margin-bottom: 12px;
+  }
+
+  /* Case studies: only show first case, no absolute positioning */
+  .cs-panel-0 { position: relative !important; }
+  .cs-panel-1 { display: none !important; }
+
+  /* Shift cards: stack vertically */
+  .shift-stack { min-height: auto !important; }
+
+  /* Problem section: stack vertically instead of side-by-side */
+  .problem-content { grid-template-columns: 1fr !important; }
+  .problem-left, .problem-right { padding: 40px 20px !important; }
+  .problem-right { border-left: none !important; border-top: 1px solid var(--border) !important; }
+
+  /* Metrics grid: 2 cols on mobile */
+  .metrics-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}

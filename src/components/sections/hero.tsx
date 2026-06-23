@@ -181,7 +181,7 @@ export default function Hero() {
                 </a>
               </div>
 
-              <div className="grid grid-cols-4 gap-4 pt-8 border-t border-border">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-border">
                 {stats.map((s) => (
                   <div key={s.label} className="hero-stat opacity-0">
                     <div className="font-mono font-bold text-xl text-text-primary">{s.value}</div>
