@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, IBM_Plex_Mono, Space_Grotesk } from 'next/font/google'
+import { Inter, IBM_Plex_Mono, Fraunces } from 'next/font/google'
 import './globals.css'
 import SmoothScroll from '@/components/smooth-scroll'
 
@@ -9,10 +9,11 @@ const inter = Inter({
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-display',
-  weight: ['700'],
+  weight: ['400', '700', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-fraunces',
   display: 'swap',
 })
 
@@ -40,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable}`}>
-      <body className={`grain font-sans bg-bg text-text-primary antialiased ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${fraunces.variable}`}>
+      <body className="grain font-sans bg-bg text-text-primary antialiased">
         <SmoothScroll>
           {children}
         </SmoothScroll>

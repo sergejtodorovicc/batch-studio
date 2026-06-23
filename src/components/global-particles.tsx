@@ -40,7 +40,7 @@ export default function GlobalParticles() {
         }
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0,194,255,${p.opacity})`
+        ctx.fillStyle = `rgba(212,137,26,${p.opacity})`
         ctx.fill()
       })
       animRef.current = requestAnimationFrame(draw)

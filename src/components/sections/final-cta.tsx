@@ -41,7 +41,7 @@ export default function FinalCTA() {
         if (s.y < 0) { s.y = canvas.height; s.x = Math.random() * canvas.width }
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0,194,255,${s.opacity})`
+        ctx.fillStyle = `rgba(212,137,26,${s.opacity})`
         ctx.fill()
       })
       animRef.current = requestAnimationFrame(draw)

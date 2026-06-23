@@ -9,19 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#060C14',
-        surface: '#0D1B2A',
-        border: '#1A3A50',
-        'text-primary': '#EEF8FF',
-        'text-muted': '#6B8FA8',
-        accent: '#00C2FF',
-        'accent-premium': '#60DEFF',
-        danger: '#FF4040',
+        bg:              '#0A0705',
+        surface:         '#150E09',
+        border:          '#2E1F12',
+        'text-primary':  '#F2EAE0',
+        'text-muted':    '#9B8878',
+        accent:          '#D4891A',
+        'accent-premium':'#F0C060',
+        danger:          '#C44028',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
-        display: ['var(--font-display)', 'sans-serif'],
+        sans:    ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        body:    ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        serif:   ['var(--font-fraunces)', 'Georgia', 'serif'],
+        mono:    ['var(--font-mono)', 'monospace'],
       },
       fontSize: {
         'display': ['clamp(64px, 10vw, 160px)', { lineHeight: '0.92', letterSpacing: '-0.04em' }],

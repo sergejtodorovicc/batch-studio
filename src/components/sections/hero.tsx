@@ -20,14 +20,14 @@ const adCards = [
 ]
 
 const cardGradients = [
-  'linear-gradient(135deg, rgba(0,194,255,0.07), rgba(0,194,255,0.01))',
-  'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))',
-  'linear-gradient(135deg, rgba(107,143,168,0.05), rgba(107,143,168,0.01))',
+  'linear-gradient(135deg, rgba(212,137,26,0.07), rgba(212,137,26,0.01))',
+  'linear-gradient(135deg, rgba(242,234,224,0.05), rgba(242,234,224,0.01))',
+  'linear-gradient(135deg, rgba(155,136,120,0.05), rgba(155,136,120,0.01))',
 ]
 const cardBorders = [
-  '1px solid rgba(0,194,255,0.12)',
-  '1px solid rgba(255,255,255,0.08)',
-  '1px solid rgba(107,143,168,0.08)',
+  '1px solid rgba(212,137,26,0.12)',
+  '1px solid rgba(242,234,224,0.08)',
+  '1px solid rgba(155,136,120,0.08)',
 ]
 const metricColors = ['var(--accent)', 'var(--text-primary)', 'var(--text-muted)']
 const dotColors = ['var(--accent)', 'var(--text-primary)', 'var(--text-muted)']
@@ -41,9 +41,9 @@ function CardMockVisual({ i }: { i: number }) {
         </div>
         <div className="rounded-lg mb-2" style={{ width: 40, height: 40, background: 'var(--accent)', opacity: 0.8 }} />
         <div className="w-full flex flex-col gap-1 px-4">
-          <div className="rounded" style={{ width: '100%', height: 4, background: 'rgba(0,194,255,0.15)' }} />
-          <div className="rounded" style={{ width: '85%', height: 4, background: 'rgba(0,194,255,0.15)' }} />
-          <div className="rounded" style={{ width: '60%', height: 4, background: 'rgba(0,194,255,0.15)' }} />
+          <div className="rounded" style={{ width: '100%', height: 4, background: 'rgba(212,137,26,0.15)' }} />
+          <div className="rounded" style={{ width: '85%', height: 4, background: 'rgba(212,137,26,0.15)' }} />
+          <div className="rounded" style={{ width: '60%', height: 4, background: 'rgba(212,137,26,0.15)' }} />
         </div>
       </div>
     )
@@ -57,7 +57,7 @@ function CardMockVisual({ i }: { i: number }) {
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M6 4L16 10L6 16V4Z" fill="white" fillOpacity="0.6" />
         </svg>
-        <div className="absolute bottom-2 left-2 right-2" style={{ height: 3, background: 'rgba(0,194,255,0.3)', borderRadius: 2 }}>
+        <div className="absolute bottom-2 left-2 right-2" style={{ height: 3, background: 'rgba(212,137,26,0.3)', borderRadius: 2 }}>
           <div style={{ width: '40%', height: '100%', background: 'var(--accent)', borderRadius: 2 }} />
         </div>
       </div>
@@ -148,7 +148,7 @@ export default function Hero() {
             <div className="hero-text-block" style={{ perspective: '1000px' }}>
               <div className="flex items-center gap-3 mb-5">
                 <span className="accent-dot animate-[pulse-slow_3s_ease-in-out_infinite]" />
-                <span className="label">AI-Native Creative Production</span>
+                <span className="label">Creative Production Studio</span>
               </div>
 
               <div className="mb-5">
@@ -160,6 +160,7 @@ export default function Hero() {
                         fontSize: 'clamp(44px, 6.5vw, 100px)',
                         letterSpacing: '-0.04em',
                         color: i === 2 ? 'var(--accent)' : 'var(--text-primary)',
+                        fontStyle: i === 2 ? 'italic' : 'normal',
                       }}
                     >
                       {line}

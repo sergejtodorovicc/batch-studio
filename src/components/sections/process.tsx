@@ -233,8 +233,8 @@ function FlipCard({ d, flipped }: { d: typeof days[0]; flipped: boolean }) {
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
-            background: 'rgba(0,194,255,0.08)',
-            border: '1px solid rgba(0,194,255,0.3)',
+            background: 'rgba(212,137,26,0.08)',
+            border: '1px solid rgba(212,137,26,0.3)',
           }}
         >
           <div className="text-xl mb-2 text-accent font-bold">✓</div>

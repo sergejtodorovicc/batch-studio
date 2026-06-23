@@ -240,15 +240,15 @@ export default function CaseStudies() {
                             className="glass rounded-xl p-4 flex-1 transition-all duration-300"
                             style={{
                               borderColor: activeCase === i && activeCheckmarks.length > j
-                                ? 'rgba(0,194,255,0.25)'
+                                ? 'rgba(212,137,26,0.25)'
                                 : 'var(--border)',
                             }}
                           >
                             <div
                               className="rounded-lg mb-3 flex items-center justify-center"
-                              style={{ height: 80, background: j === 0 ? 'linear-gradient(135deg, rgba(0,194,255,0.06), transparent)' : j === 1 ? 'linear-gradient(135deg, rgba(255,255,255,0.04), transparent)' : 'linear-gradient(135deg, rgba(107,143,168,0.04), transparent)' }}
+                              style={{ height: 80, background: j === 0 ? 'linear-gradient(135deg, rgba(212,137,26,0.06), transparent)' : j === 1 ? 'linear-gradient(135deg, rgba(242,234,224,0.04), transparent)' : 'linear-gradient(135deg, rgba(155,136,120,0.04), transparent)' }}
                             >
-                              <div className="w-8 h-8 rounded-lg" style={{ background: j === 0 ? 'rgba(0,194,255,0.12)' : j === 1 ? 'rgba(255,255,255,0.08)' : 'rgba(107,143,168,0.08)' }} />
+                              <div className="w-8 h-8 rounded-lg" style={{ background: j === 0 ? 'rgba(212,137,26,0.12)' : j === 1 ? 'rgba(242,234,224,0.08)' : 'rgba(155,136,120,0.08)' }} />
                             </div>
                             <div className="text-[10px] font-mono text-text-muted">{card.tag}</div>
                           </div>

@@ -80,7 +80,7 @@ export default function Shift() {
 
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(0,194,255,0.5)'
+        ctx.fillStyle = 'rgba(212,137,26,0.5)'
         ctx.fill()
       })
 
@@ -94,7 +94,7 @@ export default function Shift() {
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(0,194,255,${0.12 * (1 - dist / 120)})`
+            ctx.strokeStyle = `rgba(212,137,26,${0.12 * (1 - dist / 120)})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
