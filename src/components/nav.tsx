@@ -8,9 +8,9 @@ const links = ['Work', 'Services', 'Process', 'About']
 export default function Nav() {
   const navRef = useRef<HTMLElement>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    // Animate nav letters on load
     const letters = navRef.current?.querySelectorAll('.nav-letter')
     if (letters) {
       gsap.fromTo(letters,
@@ -32,7 +32,7 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const logoText = 'OBSIDIAN'
+  const logoText = 'BATCH'
 
   return (
     <nav
@@ -59,7 +59,7 @@ export default function Nav() {
             <span className="nav-letter ml-1 accent-dot opacity-0" />
           </a>
 
-          {/* Links */}
+          {/* Links — desktop only */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <a
@@ -72,15 +72,51 @@ export default function Nav() {
             ))}
           </div>
 
-          {/* CTA */}
-          <a
-            href="#contact"
-            className="nav-cta opacity-0 text-sm font-medium px-5 py-2.5 border border-accent text-accent hover:bg-accent hover:text-bg transition-all duration-200 tracking-wide"
-          >
-            Book a Call →
-          </a>
+          {/* Right side: hamburger (mobile) + CTA (desktop) */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden flex flex-col gap-1.5 p-2"
+              aria-label="Menu"
+            >
+              <span className={`w-5 h-px bg-text-primary transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`w-5 h-px bg-text-primary transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`w-5 h-px bg-text-primary transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </button>
+            <a
+              href="#contact"
+              className="nav-cta opacity-0 text-sm font-medium px-5 py-2.5 border border-accent text-accent hover:bg-accent hover:text-bg transition-all duration-200 tracking-wide"
+            >
+              Book a Call →
+            </a>
+          </div>
         </div>
       </div>
+
+      {/* Mobile drawer */}
+      {menuOpen && (
+        <div className="md:hidden border-t border-border bg-bg/95 backdrop-blur-xl">
+          <div className="container py-6 flex flex-col gap-6">
+            {links.map(link => (
+              <a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                onClick={() => setMenuOpen(false)}
+                className="text-lg text-text-muted hover:text-text-primary transition-colors"
+              >
+                {link}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 inline-flex items-center gap-2 px-5 py-3 border border-accent text-accent text-sm font-medium w-fit"
+            >
+              Book a Call →
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

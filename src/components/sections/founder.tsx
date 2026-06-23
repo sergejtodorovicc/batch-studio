@@ -15,7 +15,7 @@ const quoteLines = [
   'than their competitors can react.',
 ]
 
-const FOUNDER_NOTE = "I built Obsidian because I watched great products lose to inferior ones — just because the competitor had more creative volume and faster production. AI changed what is possible. We built the system to make sure the right brands win."
+const FOUNDER_NOTE = "I built Batch because I watched great products lose to inferior ones — just because the competitor had more creative volume and faster production. AI changed what is possible. We built the system to make sure the right brands win."
 
 export default function Founder() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -79,7 +79,7 @@ export default function Founder() {
       {/* Background accent radial */}
       <div
         className="founder-bg absolute inset-0 opacity-[0.025] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 40% 60%, #C8FF00, transparent 65%)' }}
+        style={{ background: 'radial-gradient(ellipse at 40% 60%, var(--accent), transparent 65%)' }}
       />
 
       <div className="container relative z-10">
@@ -88,7 +88,7 @@ export default function Founder() {
           <hr className="flex-1 border-none border-t border-border" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px_300px] gap-16 items-start">
           {/* Large quote with mask reveal */}
           <div className="founder-quote">
             <div className="text-text-muted mb-6 font-serif leading-none" style={{ fontSize: 72 }}>&ldquo;</div>
@@ -122,9 +122,14 @@ export default function Founder() {
               className="typewriter-cursor text-text-muted text-sm leading-relaxed"
             />
             <div className="mt-10 pt-6 border-t border-border">
-              <div className="text-sm font-semibold text-text-primary">[YOUR FULL NAME HERE]</div>
-              <div className="label mt-1">Founder, Obsidian Studio</div>
+              <div className="text-sm font-semibold text-text-primary">Sergej Todorovic</div>
+              <div className="label mt-1">Founder &amp; Creative Director, Batch</div>
             </div>
+          </div>
+
+          {/* Photo placeholder */}
+          <div className="hidden lg:flex glass rounded-2xl items-center justify-center" style={{ width: 300, height: 320 }}>
+            <span className="label">PHOTO</span>
           </div>
         </div>
       </div>

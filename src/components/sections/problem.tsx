@@ -103,7 +103,7 @@ export default function Problem() {
       }, 0.25)
 
       // 60%+: right side highlight
-      tl.to('.problem-right', { borderColor: 'rgba(200,255,0,0.25)', ease: 'none' }, 0.6)
+      tl.to('.problem-right', { borderColor: 'rgba(0,194,255,0.25)', ease: 'none' }, 0.6)
       tl.to('.savings-badge', { opacity: 1, scale: 1, ease: 'back.out' }, 0.65)
 
       // 85-100%: fade out
@@ -174,14 +174,14 @@ export default function Problem() {
           {/* ── RIGHT: The New Way ── */}
           <div
             className="problem-right relative flex flex-col justify-center px-14 border border-l-0 border-border transition-colors duration-700"
-            style={{ background: 'linear-gradient(135deg, #080808 0%, #0d110a 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #060C14 0%, #0a1520 100%)' }}
           >
-            <div className="absolute top-8 left-8 label text-accent/60">The Obsidian Way</div>
+            <div className="absolute top-8 left-8 label text-accent/60">The Batch Way</div>
 
             {/* Savings badge */}
             <div
               className="savings-badge absolute top-8 right-8 opacity-0 scale-90 px-4 py-2 rounded-full"
-              style={{ background: 'rgba(200,255,0,0.1)', border: '1px solid rgba(200,255,0,0.3)' }}
+              style={{ background: 'rgba(0,194,255,0.1)', border: '1px solid rgba(0,194,255,0.3)' }}
             >
               <span className="text-accent text-xs font-semibold tracking-wide">Save 90%</span>
             </div>

@@ -284,11 +284,11 @@ export default function System() {
                   </div>
                 </div>
                 <div className="relative rounded-xl overflow-hidden border border-accent/30">
-                  <div style={{ height: 180, background: 'linear-gradient(135deg, #0d1a05, #0a120a)' }}
+                  <div style={{ height: 180, background: 'linear-gradient(135deg, #060f1a, #060c14)' }}
                     className="flex items-center justify-center">
                     <span className="text-accent text-xs font-mono">Human-polished ✓</span>
                   </div>
-                  <div className="absolute bottom-0 inset-x-0 p-3" style={{ background: 'rgba(200,255,0,0.05)' }}>
+                  <div className="absolute bottom-0 inset-x-0 p-3" style={{ background: 'rgba(0,194,255,0.05)' }}>
                     <div className="label text-accent/70">After</div>
                   </div>
                   <div className="wipe-overlay-04 wipe-overlay rounded-xl" style={{ transformOrigin: 'left' }} />
@@ -337,7 +337,7 @@ export default function System() {
                         className="graph-bar w-full rounded-t"
                         style={{
                           height: `${h}%`,
-                          background: i === graphData.length - 1 ? 'var(--accent)' : 'rgba(200,255,0,0.25)',
+                          background: i === graphData.length - 1 ? 'var(--accent)' : 'rgba(0,194,255,0.25)',
                           transform: 'scaleY(0)',
                           transformOrigin: 'bottom',
                         }}

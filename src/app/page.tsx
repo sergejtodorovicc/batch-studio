@@ -1,5 +1,7 @@
+import GlobalParticles from '@/components/global-particles'
 import Nav from '@/components/nav'
 import Hero from '@/components/sections/hero'
+import LogoRail from '@/components/sections/logo-rail'
 import Problem from '@/components/sections/problem'
 import Shift from '@/components/sections/shift'
 import System from '@/components/sections/system'
@@ -18,9 +20,11 @@ import MobileCTA from '@/components/mobile-cta'
 export default function Home() {
   return (
     <>
+      <GlobalParticles />
       <Nav />
       <main>
         <Hero />
+        <LogoRail />
         <Problem />
         <Shift />
         <System />

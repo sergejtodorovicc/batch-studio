@@ -31,7 +31,7 @@ const cases = [
       { value: '4×', label: 'more ad angles tested at once', direction: '↑' },
     ],
     adCards: [
-      { tag: 'Static Ad', color: '#C8FF00' },
+      { tag: 'Static Ad', color: 'var(--accent)' },
       { tag: 'Video 15s', color: '#fff' },
       { tag: 'Creator Style', color: '#888' },
     ],
@@ -60,7 +60,7 @@ const cases = [
       { value: '0', label: 'photo shoots needed', direction: '' },
     ],
     adCards: [
-      { tag: 'Product Photo', color: '#C8FF00' },
+      { tag: 'Product Photo', color: 'var(--accent)' },
       { tag: 'Reels Ad', color: '#f0a0c0' },
       { tag: 'Story Ad', color: '#888' },
     ],
@@ -240,15 +240,15 @@ export default function CaseStudies() {
                             className="glass rounded-xl p-4 flex-1 transition-all duration-300"
                             style={{
                               borderColor: activeCase === i && activeCheckmarks.length > j
-                                ? `${card.color}40`
+                                ? 'rgba(0,194,255,0.25)'
                                 : 'var(--border)',
                             }}
                           >
                             <div
                               className="rounded-lg mb-3 flex items-center justify-center"
-                              style={{ height: 80, background: `linear-gradient(135deg, ${card.color}10, transparent)` }}
+                              style={{ height: 80, background: j === 0 ? 'linear-gradient(135deg, rgba(0,194,255,0.06), transparent)' : j === 1 ? 'linear-gradient(135deg, rgba(255,255,255,0.04), transparent)' : 'linear-gradient(135deg, rgba(107,143,168,0.04), transparent)' }}
                             >
-                              <div className="w-8 h-8 rounded-lg" style={{ background: `${card.color}20` }} />
+                              <div className="w-8 h-8 rounded-lg" style={{ background: j === 0 ? 'rgba(0,194,255,0.12)' : j === 1 ? 'rgba(255,255,255,0.08)' : 'rgba(107,143,168,0.08)' }} />
                             </div>
                             <div className="text-[10px] font-mono text-text-muted">{card.tag}</div>
                           </div>

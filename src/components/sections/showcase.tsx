@@ -7,13 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const items = [
-  { tag: 'AI Product Photo', label: 'Supplement Line', category: 'AI Product Photography', color: '#C8FF00', aspect: '4/5', hasVideo: false },
+  { tag: 'AI Product Photo', label: 'Supplement Line', category: 'AI Product Photography', color: '#00C2FF', aspect: '4/5', hasVideo: false },
   { tag: 'AI Video Ad :15s', label: 'Beauty Brand', category: 'AI Video Ads', color: '#ffffff', aspect: '9/16', hasVideo: true },
   { tag: 'AI Creator Video', label: 'D2C Skincare', category: 'Creator Video Ads', color: '#888888', aspect: '9/16', hasVideo: true },
-  { tag: 'AI Commercial :30s', label: 'Hero Film', category: 'AI Commercials', color: '#C8FF00', aspect: '16/9', hasVideo: true },
+  { tag: 'AI Commercial :30s', label: 'Hero Film', category: 'AI Commercials', color: '#00C2FF', aspect: '16/9', hasVideo: true },
   { tag: 'AI Static Ad', label: 'Fashion Drop', category: 'AI Performance Creative', color: '#ffffff', aspect: '1/1', hasVideo: false },
   { tag: 'AI Product Photo', label: 'Wellness Brand', category: 'AI Product Photography', color: '#666', aspect: '4/5', hasVideo: false },
-  { tag: 'AI Landing Page', label: 'E-commerce Hero', category: 'AI Performance Creative', color: '#C8FF00', aspect: '16/9', hasVideo: false },
+  { tag: 'AI Landing Page', label: 'E-commerce Hero', category: 'AI Performance Creative', color: '#00C2FF', aspect: '16/9', hasVideo: false },
 ]
 
 export default function Showcase() {

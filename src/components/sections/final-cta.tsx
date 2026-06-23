@@ -41,7 +41,7 @@ export default function FinalCTA() {
         if (s.y < 0) { s.y = canvas.height; s.x = Math.random() * canvas.width }
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(200,255,0,${s.opacity})`
+        ctx.fillStyle = `rgba(0,194,255,${s.opacity})`
         ctx.fill()
       })
       animRef.current = requestAnimationFrame(draw)
@@ -57,11 +57,10 @@ export default function FinalCTA() {
   // ── Scroll animations ──
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // "Your Competitors" — starts red, transitions to white
       gsap.fromTo('.cta-line-red',
-        { opacity: 0, y: 60, color: '#ff3b30' },
+        { opacity: 0, y: 60, color: 'var(--danger)' },
         {
-          opacity: 1, y: 0, color: '#F5F5F5',
+          opacity: 1, y: 0, color: 'var(--text-primary)',
           duration: 1.4,
           ease: 'power4.out',
           scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' },
@@ -107,18 +106,6 @@ export default function FinalCTA() {
     return () => ctx.revert()
   }, [])
 
-  // ── Ripple click handler ──
-  function handleRipple(e: React.MouseEvent<HTMLAnchorElement>) {
-    const btn = e.currentTarget
-    const rect = btn.getBoundingClientRect()
-    const ripple = document.createElement('span')
-    ripple.className = 'ripple'
-    ripple.style.left = `${e.clientX - rect.left}px`
-    ripple.style.top = `${e.clientY - rect.top}px`
-    btn.appendChild(ripple)
-    setTimeout(() => ripple.remove(), 700)
-  }
-
   return (
     <section
       ref={sectionRef}
@@ -131,7 +118,7 @@ export default function FinalCTA() {
       {/* Accent glow */}
       <div
         className="cta-glow absolute inset-0 opacity-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% 100%, #C8FF00, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 100%, var(--accent), transparent 60%)' }}
       />
 
       {/* Grid */}
@@ -153,7 +140,7 @@ export default function FinalCTA() {
                   fontSize: 'clamp(52px, 10vw, 150px)',
                   letterSpacing: '-0.04em',
                   lineHeight: '0.95',
-                  color: '#ff3b30',
+                  color: 'var(--danger)',
                 }}
               >
                 Your Competitors
@@ -178,29 +165,42 @@ export default function FinalCTA() {
             We&apos;re already building. 30 creatives per month. Delivered in 72 hours. No shoots. No contracts. Pause anytime.
           </p>
 
-          {/* CTAs — pulse + ripple */}
-          <div className="cta-buttons opacity-0 flex flex-wrap gap-4 mb-12">
-            <a
-              href="mailto:hello@obsidian.studio"
-              onClick={handleRipple}
-              className="ripple-container pulse-cta inline-flex items-center gap-3 px-8 py-5 bg-accent text-bg font-bold text-base hover:opacity-90 transition-opacity"
+          {/* Contact form */}
+          <form
+            className="cta-buttons opacity-0 flex flex-col gap-4 max-w-lg"
+            onSubmit={(e) => { e.preventDefault(); alert('Message sent! We will be in touch within 24 hours.') }}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Your name"
+                required
+                className="bg-transparent border border-border text-text-primary px-4 py-3 text-sm placeholder:text-text-muted focus:border-accent focus:outline-none transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Work email"
+                required
+                className="bg-transparent border border-border text-text-primary px-4 py-3 text-sm placeholder:text-text-muted focus:border-accent focus:outline-none transition-colors"
+              />
+            </div>
+            <select
+              className="bg-bg border border-border text-text-muted px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors appearance-none"
             >
-              Book a Free Strategy Call →
-            </a>
-            <a
-              href="mailto:hello@obsidian.studio"
-              className="inline-flex items-center gap-3 px-8 py-5 border border-border text-text-primary text-base hover:border-text-muted transition-colors"
+              <option value="">Monthly ad spend</option>
+              <option value="<10k">Under €10K/month</option>
+              <option value="10-50k">€10K – €50K/month</option>
+              <option value="50-100k">€50K – €100K/month</option>
+              <option value="100k+">€100K+ / month</option>
+            </select>
+            <button
+              type="submit"
+              className="ripple-container pulse-cta inline-flex items-center justify-center gap-3 px-8 py-5 bg-accent text-bg font-bold text-base hover:opacity-90 transition-opacity"
             >
-              hello@obsidian.studio
-            </a>
-          </div>
-
-          {/* Footnote */}
-          <p className="cta-sub opacity-0 text-text-muted text-sm mb-20">
-            No contracts. No retainers. Start with a €1,500 Sprint.
-            <br />
-            Judge the results. Then decide.
-          </p>
+              Book Free Strategy Call →
+            </button>
+            <p className="text-text-muted text-xs">Or email us directly: hello@batch.studio · We reply within 24h</p>
+          </form>
         </div>
       </div>
     </section>

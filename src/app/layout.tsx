@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google'
+import { Inter, IBM_Plex_Mono, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import SmoothScroll from '@/components/smooth-scroll'
 
@@ -16,18 +16,19 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 })
 
-const jetbrainsMono = JetBrains_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
+  weight: ['400', '700'],
   variable: '--font-mono',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Obsidian Studio — AI-Native Creative Agency',
-  description: '30 launch-ready ad creatives. 72 hours. Built on your real ad data. 10–20× cheaper than traditional production.',
+  title: 'BATCH — AI-Native Creative Production',
+  description: '30 launch-ready ads in 72 hours. Built on your real ad data. No cameras, no shoots, no contracts.',
   keywords: ['AI creative agency', 'AI ads', 'AI UGC', 'performance creative', 'AI commercials'],
   openGraph: {
-    title: 'Obsidian Studio — AI-Native Creative Agency',
+    title: 'BATCH — AI-Native Creative Production',
     description: 'We build ads that don\'t need cameras.',
     type: 'website',
   },
@@ -39,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable}`}>
       <body className={`grain font-sans bg-bg text-text-primary antialiased ${spaceGrotesk.variable}`}>
         <SmoothScroll>
           {children}

@@ -11,37 +11,37 @@ const days = [
     day: 'Day 0',
     title: 'Onboarding',
     body: 'We learn your brand: product photos, style guide, and a 30-minute onboarding call. That is all we need from you.',
-    icon: '◎',
+    icon: '01',
   },
   {
     day: 'Day 1',
     title: 'Finding Your Hooks',
     body: 'We analyse your ad history, customer reviews, and competitors. You get 10 ranked creative angles — the specific reasons people will buy your product.',
-    icon: '⟐',
+    icon: '02',
   },
   {
     day: 'Day 2',
     title: 'Briefs Approved',
     body: 'One-page brief per concept. You review via a short video walkthrough and approve with a comment. No calls required.',
-    icon: '✓',
+    icon: '03',
   },
   {
     day: 'Day 3–4',
     title: 'Generation',
     body: 'AI batch production from your trained brand models. We generate 4× more than needed, then filter to the best 30.',
-    icon: '⚡',
+    icon: '04',
   },
   {
     day: 'Day 5–6',
     title: 'Polish',
     body: 'Human editing layer — colour, sound, captions, ratio crops. Taste is the last moat.',
-    icon: '◈',
+    icon: '05',
   },
   {
     day: 'Day 7',
     title: 'Delivered',
     body: '30 launch-ready creatives delivered to a shared workspace. Your first performance data arrives in 7 days — and we use it to improve the next batch.',
-    icon: '🚀',
+    icon: '06',
     flip: true,
   },
 ]
@@ -202,7 +202,7 @@ function MilestoneCard({ d, above }: { d: typeof days[0]; above: boolean }) {
   return (
     <div className="glass rounded-xl p-4" style={{ borderColor: 'var(--border)' }}>
       <div className="text-xs font-mono text-accent mb-1">{d.day}</div>
-      <div className="text-sm font-semibold text-text-primary mb-2">{d.icon} {d.title}</div>
+      <div className="text-sm font-semibold text-text-primary mb-2">{d.title}</div>
       <p className="text-xs text-text-muted leading-relaxed">{d.body}</p>
     </div>
   )
@@ -224,7 +224,7 @@ function FlipCard({ d, flipped }: { d: typeof days[0]; flipped: boolean }) {
         {/* Front */}
         <div className="glass rounded-xl p-4 absolute inset-0" style={{ backfaceVisibility: 'hidden' }}>
           <div className="text-xs font-mono text-accent mb-1">{d.day}</div>
-          <div className="text-sm font-semibold text-text-primary mb-2">{d.icon} {d.title}</div>
+          <div className="text-sm font-semibold text-text-primary mb-2">{d.title}</div>
           <p className="text-xs text-text-muted leading-relaxed">{d.body}</p>
         </div>
         {/* Back */}
@@ -233,11 +233,11 @@ function FlipCard({ d, flipped }: { d: typeof days[0]; flipped: boolean }) {
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
-            background: 'rgba(200,255,0,0.08)',
-            border: '1px solid rgba(200,255,0,0.3)',
+            background: 'rgba(0,194,255,0.08)',
+            border: '1px solid rgba(0,194,255,0.3)',
           }}
         >
-          <div className="text-2xl mb-2">🚀</div>
+          <div className="text-xl mb-2 text-accent font-bold">✓</div>
           <div className="text-sm font-bold text-accent">30 ads live.</div>
           <div className="text-xs text-text-muted mt-1">72 hours ahead of schedule.</div>
         </div>

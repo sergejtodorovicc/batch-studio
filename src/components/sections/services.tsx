@@ -17,6 +17,7 @@ const services = [
     deliverables: ['10 static ads', '3 video ads', '1 angle map', '72h delivery', '1 revision round', 'Keep everything'],
     cta: 'Start a Sprint',
     highlight: false,
+    premiumTier: false,
   },
   {
     tag: 'Core',
@@ -28,6 +29,7 @@ const services = [
     deliverables: ['20 static ads', '6 video ads', '4 creator-style videos', 'Weekly drops', 'Monthly win report', 'Slack channel', 'We track what works'],
     cta: 'Start Engine',
     highlight: true,
+    premiumTier: false,
   },
   {
     tag: 'Premium',
@@ -39,6 +41,7 @@ const services = [
     deliverables: ['60 assets/month', 'LP + CRO creative', 'Dedicated strategist', 'Creator-style video ads', 'Weekly strategy call', 'Priority turnaround'],
     cta: 'Apply for Pro',
     highlight: false,
+    premiumTier: true,
   },
   {
     tag: 'Project',
@@ -50,6 +53,7 @@ const services = [
     deliverables: ['30–60s hero film', '15 platform cutdowns', 'Sound design', 'All formats included', '2 revision rounds', 'Portfolio asset'],
     cta: 'Discuss Project',
     highlight: false,
+    premiumTier: false,
   },
   {
     tag: 'Enterprise',
@@ -61,6 +65,7 @@ const services = [
     deliverables: ['8-week setup', 'Full AI creative system', 'Proven creative templates', 'Your brand trained into the system', 'Team training & documentation', '90-day support'],
     cta: 'Book Discovery Call',
     highlight: false,
+    premiumTier: true,
   },
 ]
 
@@ -185,6 +190,9 @@ export default function Services() {
 
                 {/* Price count-up */}
                 <div className="mb-4">
+                  {active.premiumTier && (
+                    <div className="label mb-2" style={{ color: 'var(--accent-premium)' }}>Premium tier</div>
+                  )}
                   <span
                     ref={priceRef}
                     className="font-mono font-bold text-text-primary"
@@ -203,8 +211,8 @@ export default function Services() {
                     className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold transition-all duration-300"
                     style={{
                       background: active.highlight ? 'var(--accent)' : 'transparent',
-                      color: active.highlight ? 'var(--bg)' : 'var(--text-primary)',
-                      border: active.highlight ? 'none' : '1px solid var(--border)',
+                      color: active.highlight ? 'var(--bg)' : active.premiumTier ? 'var(--accent-premium)' : 'var(--text-primary)',
+                      border: active.highlight ? 'none' : active.premiumTier ? '1px solid var(--accent-premium)' : '1px solid var(--border)',
                     }}
                   >
                     {active.cta} →
@@ -241,7 +249,7 @@ export default function Services() {
                         <span className="label text-text-muted">{s.tag}</span>
                         <span className="text-sm font-semibold text-text-primary">{s.name}</span>
                       </div>
-                      <span className="font-mono text-sm font-bold" style={{ color: s.highlight ? 'var(--accent)' : 'var(--text-muted)' }}>
+                      <span className="font-mono text-sm font-bold" style={{ color: s.highlight ? 'var(--accent)' : s.premiumTier ? 'var(--accent-premium)' : 'var(--text-muted)' }}>
                         {s.price}
                       </span>
                     </div>

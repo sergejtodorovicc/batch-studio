@@ -10,7 +10,7 @@ const metrics = [
   { value: 31, suffix: '%', label: 'Average cost-per-customer reduction' },
   { value: 72, suffix: 'h', label: 'Guaranteed delivery time' },
   { value: 4, suffix: '×', label: 'More ad angles tested' },
-  { value: 8, suffix: 'mo', label: 'Average client relationship' },
+  { value: 12, suffix: 'mo', label: 'Average client relationship' },
 ]
 
 const testimonials = [
@@ -18,26 +18,31 @@ const testimonials = [
     quote: 'We went from 8 creatives per month to 30. CAC dropped 31% in six weeks. Our old agency still hasn\'t replied to our last email.',
     author: 'Head of Growth',
     company: 'Supplement Brand — €4M ARR',
+    initials: 'MT',
   },
   {
-    quote: 'Obsidian shipped our first batch before our old agency replied to our brief. Not joking.',
+    quote: 'Batch shipped our first ads before our old agency replied to our brief. Not joking.',
     author: 'Founder',
     company: 'Beauty DTC Brand',
+    initials: 'SK',
   },
   {
     quote: 'We ran a blind test. 500 votes. Nobody could tell which ads were AI. That ended the internal debate.',
     author: 'CMO',
     company: 'E-commerce Brand — €8M ARR',
+    initials: 'AK',
   },
   {
     quote: 'The Brand AI Kit was the game changer. Every batch looks exactly like us. We stopped briefing and started approving.',
     author: 'Creative Director',
     company: 'Wellness Brand',
+    initials: 'CR',
   },
   {
     quote: '72-hour SLA sounds impossible. They\'ve never missed it. We\'ve been clients for 8 months.',
     author: 'Media Buyer',
     company: 'Performance DTC Agency',
+    initials: 'DB',
   },
 ]
 
@@ -159,13 +164,18 @@ export default function SocialProof() {
                   className="flex-shrink-0 glass rounded-2xl p-8 mr-4 border border-border"
                   style={{ width: 380 }}
                 >
-                  <p className="text-text-primary text-sm leading-relaxed mb-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center shrink-0">
+                      <span className="text-xs font-mono font-bold text-accent">{t.initials}</span>
+                    </div>
+                    <div>
+                      <div className="text-xs font-medium text-text-primary">{t.author}</div>
+                      <div className="text-[10px] text-text-muted">{t.company}</div>
+                    </div>
+                  </div>
+                  <p className="text-text-primary text-sm leading-relaxed">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div>
-                    <div className="text-sm font-medium text-text-primary">{t.author}</div>
-                    <div className="text-xs text-text-muted mt-1">{t.company}</div>
-                  </div>
                 </div>
               ))}
             </div>

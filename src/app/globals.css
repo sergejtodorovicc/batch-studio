@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --bg: #080808;
-  --surface: #111111;
-  --border: #1A1A1A;
-  --text-primary: #F5F5F5;
-  --text-muted: #666666;
-  --accent: #C8FF00;
-  --glass: rgba(255,255,255,0.04);
+  --bg: #060C14;
+  --surface: #0D1B2A;
+  --border: #1A3A50;
+  --text-primary: #EEF8FF;
+  --text-muted: #6B8FA8;
+  --accent: #00C2FF;
+  --accent-premium: #60DEFF;
+  --danger: #FF4040;
+  --glass: rgba(0, 194, 255, 0.04);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -113,9 +115,9 @@ html.lenis, html.lenis body { height: auto; }
   80% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 0); }
 }
 @keyframes glitch2 {
-  0%,100% { clip-path: inset(50% 0 30% 0); transform: translate(2px, 0); color: #C8FF00; }
+  0%,100% { clip-path: inset(50% 0 30% 0); transform: translate(2px, 0); color: var(--accent); }
   25% { clip-path: inset(20% 0 70% 0); transform: translate(-2px, 0); }
-  50% { clip-path: inset(70% 0 10% 0); transform: translate(1px, 0); color: #ff3b30; }
+  50% { clip-path: inset(70% 0 10% 0); transform: translate(1px, 0); color: var(--danger); }
   75% { clip-path: inset(5% 0 85% 0); transform: translate(-1px, 0); }
 }
 
@@ -126,8 +128,8 @@ html.lenis, html.lenis body { height: auto; }
   inset: 0;
   color: inherit;
 }
-.glitch::before { animation: glitch1 0.4s steps(1) infinite; color: #ff3b30; }
-.glitch::after  { animation: glitch2 0.4s steps(1) 0.1s infinite; color: #C8FF00; }
+.glitch::before { animation: glitch1 0.4s steps(1) infinite; color: var(--danger); }
+.glitch::after  { animation: glitch2 0.4s steps(1) 0.1s infinite; color: var(--accent); }
 
 /* Typewriter cursor */
 .typewriter-cursor::after {
