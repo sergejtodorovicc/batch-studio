@@ -82,21 +82,26 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
 
-      gsap.from('.hero-word',
-        { opacity: 0, y: -50, rotateX: 15, duration: 1, stagger: 0.1, ease: 'power4.out', delay: 0.3, clearProps: 'all' }
+      gsap.fromTo('.hero-word',
+        { opacity: 0, y: -50, rotateX: 15 },
+        { opacity: 1, y: 0, rotateX: 0, duration: 1, stagger: 0.1, ease: 'power4.out', delay: 0.3 }
       )
-      gsap.from('.hero-sub',
-        { opacity: 0, y: -20, duration: 0.8, ease: 'power3.out', delay: 0.9, clearProps: 'all' }
+      gsap.fromTo('.hero-sub',
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.9 }
       )
-      gsap.from('.hero-cta',
-        { opacity: 0, y: -15, duration: 0.6, stagger: 0.1, ease: 'power3.out', delay: 1.1, clearProps: 'all' }
+      gsap.fromTo('.hero-cta',
+        { opacity: 0, y: -15 },
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out', delay: 1.1 }
       )
-      gsap.from('.hero-stat',
-        { opacity: 0, y: -10, duration: 0.5, stagger: 0.08, ease: 'power3.out', delay: 1.4, clearProps: 'all' }
+      gsap.fromTo('.hero-stat',
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out', delay: 1.4 }
       )
 
-      gsap.from('.ad-card',
-        { opacity: 0, x: 80, rotate: 10, scale: 0.88, duration: 1, stagger: 0.14, ease: 'power4.out', delay: 0.7, clearProps: 'opacity,x,rotate,scale' }
+      gsap.fromTo('.ad-card',
+        { opacity: 0, x: 80, rotate: 10, scale: 0.88 },
+        { opacity: 1, x: 0, rotate: 0, scale: 1, duration: 1, stagger: 0.14, ease: 'power4.out', delay: 0.7 }
       )
 
       const tl = gsap.timeline({
@@ -150,7 +155,7 @@ export default function Hero() {
                 {['We Build Ads', "That Don't", 'Need Cameras.'].map((line, i) => (
                   <div key={i} className="overflow-hidden">
                     <span
-                      className="hero-word block font-display font-bold leading-none"
+                      className="hero-word block font-display font-bold leading-none opacity-0"
                       style={{
                         fontSize: 'clamp(44px, 6.5vw, 100px)',
                         letterSpacing: '-0.04em',
@@ -163,22 +168,22 @@ export default function Hero() {
                 ))}
               </div>
 
-              <p className="hero-sub text-text-muted text-base md:text-lg leading-relaxed max-w-md mb-7">
+              <p className="hero-sub opacity-0 text-text-muted text-base md:text-lg leading-relaxed max-w-md mb-7">
                 30 launch-ready creatives. 72 hours. Built on your real ad data.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
-                <a href="#contact" className="hero-cta inline-flex items-center gap-2 px-7 py-4 bg-accent text-bg font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity">
+                <a href="#contact" className="hero-cta opacity-0 inline-flex items-center gap-2 px-7 py-4 bg-accent text-bg font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity">
                   Book Free Strategy Call
                 </a>
-                <a href="#process" className="hero-cta inline-flex items-center gap-2 px-7 py-4 border border-border text-text-primary text-sm tracking-wide hover:border-text-muted transition-colors">
+                <a href="#process" className="hero-cta opacity-0 inline-flex items-center gap-2 px-7 py-4 border border-border text-text-primary text-sm tracking-wide hover:border-text-muted transition-colors">
                   See How It Works →
                 </a>
               </div>
 
               <div className="grid grid-cols-4 gap-4 pt-8 border-t border-border">
                 {stats.map((s) => (
-                  <div key={s.label} className="hero-stat">
+                  <div key={s.label} className="hero-stat opacity-0">
                     <div className="font-mono font-bold text-xl text-text-primary">{s.value}</div>
                     <div className="label mt-1">{s.label}</div>
                   </div>
@@ -191,7 +196,7 @@ export default function Hero() {
               {adCards.map((card, i) => (
                 <div
                   key={i}
-                  className="ad-card absolute glass rounded-2xl p-6 cursor-default"
+                  className="ad-card opacity-0 absolute glass rounded-2xl p-6 cursor-default"
                   style={{
                     width: 230,
                     top: i === 0 ? '4%' : i === 1 ? '36%' : '64%',
