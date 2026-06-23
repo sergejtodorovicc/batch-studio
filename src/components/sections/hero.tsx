@@ -142,7 +142,7 @@ export default function Hero() {
         <div className="hero-overlay absolute inset-0 bg-bg opacity-0 pointer-events-none z-20" />
 
         <div className="container relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
             {/* LEFT: Text */}
             <div className="hero-text-block" style={{ perspective: '1000px' }}>
@@ -192,7 +192,7 @@ export default function Hero() {
             </div>
 
             {/* RIGHT: Floating ad cards */}
-            <div className="hero-cards-block hidden lg:block relative h-[480px]">
+            <div className="hero-cards-block hidden md:block relative h-[480px]">
               {adCards.map((card, i) => (
                 <div
                   key={i}
