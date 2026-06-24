@@ -40,15 +40,12 @@ export default function WhyUs() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Table rows reveal one by one via scroll
+      // Table rows all reveal at once when section enters
       ScrollTrigger.create({
-        trigger: '.comp-table',
+        trigger: sectionRef.current,
         start: 'top 70%',
-        end: 'bottom 30%',
-        scrub: false,
-        onUpdate: (self) => {
-          const count = Math.floor(self.progress * (competitors.length + 2))
-          setVisibleRows(Array.from({ length: Math.min(count, competitors.length) }, (_, i) => i))
+        onEnter: () => {
+          setVisibleRows(competitors.map((_, i) => i))
         },
       })
 
