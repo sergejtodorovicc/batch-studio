@@ -129,7 +129,7 @@ export default function FinalCTA() {
         }}
       />
 
-      <div className="container relative z-10 py-32">
+      <div className="container relative z-10 pt-32 pb-56">
         <div className="max-w-5xl">
           {/* Headline */}
           <div className="mb-8">
@@ -199,7 +199,7 @@ export default function FinalCTA() {
             >
               Book Free Strategy Call →
             </button>
-            <p className="text-text-muted text-xs">Or email us directly: hello@batch.studio · We reply within 24h</p>
+            <p className="text-text-muted text-xs mt-2">Or email us directly: hello@batch.studio · We reply within 24h</p>
           </form>
         </div>
       </div>

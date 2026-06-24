@@ -197,7 +197,7 @@ export default function Hero() {
               {adCards.map((card, i) => (
                 <div
                   key={i}
-                  className="ad-card opacity-0 absolute glass rounded-2xl p-6 cursor-default"
+                  className="ad-card absolute glass rounded-2xl p-6 cursor-default"
                   style={{
                     width: 230,
                     top: i === 0 ? '4%' : i === 1 ? '36%' : '64%',

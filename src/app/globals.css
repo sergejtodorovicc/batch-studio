@@ -236,7 +236,7 @@ html.lenis, html.lenis body { height: auto; }
   }
 
   /* Force all GSAP opacity-0 elements visible on mobile */
-  .hero-word, .hero-sub, .hero-cta, .hero-stat,
+  .ad-card, .hero-word, .hero-sub, .hero-cta, .hero-stat,
   .sp-headline, .metric-card, .adv-card,
   .cta-line-red, .cta-line-2, .cta-sub, .cta-buttons, .cta-glow,
   .founder-mask .founder-line,
