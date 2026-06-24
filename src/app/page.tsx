@@ -24,8 +24,8 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <LogoRail />
         <Problem />
+        <LogoRail />
         <Shift />
         <System />
         <Process />
