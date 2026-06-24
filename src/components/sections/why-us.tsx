@@ -40,14 +40,18 @@ export default function WhyUs() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Table rows all reveal at once when section enters
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: 'top 70%',
-        onEnter: () => {
-          setVisibleRows(competitors.map((_, i) => i))
-        },
-      })
+      // Table rows stagger in quickly on section enter
+      gsap.fromTo('.comp-row',
+        { opacity: 0, x: -16 },
+        {
+          opacity: 1, x: 0,
+          duration: 0.3,
+          stagger: 0.08,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' },
+        }
+      )
+      setVisibleRows(competitors.map((_, i) => i))
 
       // Advantage cards
       gsap.fromTo('.adv-card',
@@ -115,11 +119,8 @@ export default function WhyUs() {
               {competitors.map((c, i) => (
                 <tr
                   key={i}
-                  className="border-b border-border text-text-muted text-sm transition-all duration-500"
-                  style={{
-                    opacity: visibleRows.includes(i) ? 1 : 0,
-                    transform: visibleRows.includes(i) ? 'none' : 'translateX(-16px)',
-                  }}
+                  className="comp-row border-b border-border text-text-muted text-sm"
+                  style={{ opacity: 0 }}
                 >
                   <td className="py-4 pr-4">{c.name}</td>
                   <td className="py-4 px-4 font-mono">{c.cost}</td>
