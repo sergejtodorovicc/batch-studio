@@ -221,7 +221,7 @@ html.lenis, html.lenis body { height: auto; }
 
 /* Sticky section wrapper */
 .sticky-section { position: relative; }
-.sticky-inner { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.sticky-inner { position: sticky; top: 0; height: 100vh; overflow: hidden; z-index: 1; background: var(--bg); }
 
 /* ─── MOBILE OVERRIDES ──────────────────────────────────────── */
 @media (max-width: 767px) {
