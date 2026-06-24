@@ -159,7 +159,7 @@ export default function System() {
   return (
     <section ref={wrapperRef} className="sticky-section" style={{ height: '500vh' }}>
       <div className="sticky-inner">
-        <div className="h-full flex">
+        <div className="h-full flex pt-20">
 
           {/* ── LEFT SIDEBAR ── */}
           <div className="hidden lg:flex flex-col justify-center w-48 shrink-0 px-8 border-r border-border">
