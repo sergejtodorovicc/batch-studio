@@ -58,7 +58,7 @@ export default function Showcase() {
 
   return (
     <section ref={sectionRef} className="border-t border-border hidden md:block" id="work">
-      <div ref={pinWrapRef} className="flex h-screen overflow-hidden">
+      <div ref={pinWrapRef} className="flex h-screen overflow-hidden pt-20">
         {/* LEFT: pinned headline */}
         <div className="w-72 shrink-0 flex flex-col justify-center px-10 border-r border-border">
           <div className="label mb-4 text-accent/60">Our Work</div>
