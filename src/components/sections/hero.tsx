@@ -13,66 +13,12 @@ const stats = [
   { value: '12mo', label: 'Average client stay' },
 ]
 
-const adCards = [
-  { tag: 'AI Product Photo', headline: 'Glow differently.', metric: '2.4%', metricLabel: 'Click rate', color: 'var(--accent)', rotate: '-4deg', delay: 0, src: '/images/concept-miumiu.jpg' },
-  { tag: 'AI Video Ad :15s', headline: '30 ads. 72 hours.', metric: '-31%', metricLabel: 'Cost per customer', color: '#fff', rotate: '3deg', delay: 0.15, src: '/images/concept-givenchy.jpg' },
-  { tag: 'AI Creator Video', headline: 'No cameras needed.', metric: '44%', metricLabel: 'Stopped scrolling', color: '#888', rotate: '-2deg', delay: 0.3, src: '/images/concept-croc.jpg' },
+const conceptImages = [
+  { src: '/images/concept-miumiu.jpg', aspect: '4/3' },
+  { src: '/images/concept-givenchy.jpg', aspect: '3/4' },
+  { src: '/images/concept-croc.jpg', aspect: '4/3' },
 ]
 
-const cardGradients = [
-  'linear-gradient(135deg, rgba(212,137,26,0.07), rgba(212,137,26,0.01))',
-  'linear-gradient(135deg, rgba(242,234,224,0.05), rgba(242,234,224,0.01))',
-  'linear-gradient(135deg, rgba(155,136,120,0.05), rgba(155,136,120,0.01))',
-]
-const cardBorders = [
-  '1px solid rgba(212,137,26,0.12)',
-  '1px solid rgba(242,234,224,0.08)',
-  '1px solid rgba(155,136,120,0.08)',
-]
-const metricColors = ['var(--accent)', 'var(--text-primary)', 'var(--text-muted)']
-const dotColors = ['var(--accent)', 'var(--text-primary)', 'var(--text-muted)']
-
-function CardMockVisual({ i }: { i: number }) {
-  if (i === 0) {
-    return (
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
-        <div className="absolute top-2 right-2">
-          <span className="text-[8px] font-mono font-bold" style={{ color: 'var(--accent)' }}>AI</span>
-        </div>
-        <div className="rounded-lg mb-2" style={{ width: 40, height: 40, background: 'var(--accent)', opacity: 0.8 }} />
-        <div className="w-full flex flex-col gap-1 px-4">
-          <div className="rounded" style={{ width: '100%', height: 4, background: 'rgba(212,137,26,0.15)' }} />
-          <div className="rounded" style={{ width: '85%', height: 4, background: 'rgba(212,137,26,0.15)' }} />
-          <div className="rounded" style={{ width: '60%', height: 4, background: 'rgba(212,137,26,0.15)' }} />
-        </div>
-      </div>
-    )
-  }
-  if (i === 1) {
-    return (
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="absolute top-2 right-2">
-          <span className="text-[8px] font-mono text-text-muted">0:15</span>
-        </div>
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M6 4L16 10L6 16V4Z" fill="white" fillOpacity="0.6" />
-        </svg>
-        <div className="absolute bottom-2 left-2 right-2" style={{ height: 3, background: 'rgba(212,137,26,0.3)', borderRadius: 2 }}>
-          <div style={{ width: '40%', height: '100%', background: 'var(--accent)', borderRadius: 2 }} />
-        </div>
-      </div>
-    )
-  }
-  return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4">
-      <div className="rounded-full" style={{ width: 32, height: 32, background: 'rgba(255,255,255,0.1)' }} />
-      <div className="w-full flex flex-col gap-1">
-        <div className="rounded-full mx-auto" style={{ height: 3, width: '80%', background: 'rgba(136,136,136,0.2)' }} />
-        <div className="rounded-full mx-auto" style={{ height: 3, width: '60%', background: 'rgba(136,136,136,0.15)' }} />
-      </div>
-    </div>
-  )
-}
 
 export default function Hero() {
   const wrapperRef = useRef<HTMLElement>(null)
@@ -99,12 +45,12 @@ export default function Hero() {
         { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out', delay: 1.4 }
       )
 
-      gsap.fromTo('.ad-card',
-        { opacity: 0, x: 80, rotate: 10, scale: 0.88 },
-        { opacity: 1, x: 0, rotate: 0, scale: 1, duration: 1, stagger: 0.14, ease: 'power4.out', delay: 0.7 }
+      gsap.fromTo('.hero-images-block',
+        { opacity: 0, x: 40 },
+        { opacity: 1, x: 0, duration: 1, ease: 'power3.out', delay: 0.7 }
       )
 
-      const tl = gsap.timeline({
+const tl = gsap.timeline({
         scrollTrigger: {
           trigger: wrapper,
           start: 'top top',
@@ -117,13 +63,6 @@ export default function Hero() {
         .to('.hero-cards-block', { y: -60, x: 30, ease: 'none' }, 0)
         .to('.hero-grid-bg', { opacity: 0.06, ease: 'none' }, 0)
         .to('.hero-sub', { opacity: 0, ease: 'none' }, 0)
-        .to('.ad-card', {
-          x: (i) => [-120, 0, 120][i] ?? 0,
-          y: (i) => [-40, 0, 40][i] ?? 0,
-          scale: 0.85,
-          opacity: 0.4,
-          ease: 'none',
-        }, 0.4)
         .to('.hero-overlay', { opacity: 1, ease: 'none' }, 0.7)
 
     }, wrapperRef)
@@ -192,44 +131,22 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* RIGHT: Floating ad cards */}
-            <div className="hero-cards-block hidden md:block relative h-[480px]">
-              {adCards.map((card, i) => (
-                <div
-                  key={i}
-                  className="ad-card absolute glass rounded-2xl p-6 cursor-default"
-                  style={{
-                    width: 230,
-                    top: i === 0 ? '4%' : i === 1 ? '36%' : '64%',
-                    left: i === 0 ? '8%' : i === 1 ? '48%' : '4%',
-                    '--rotate': card.rotate,
-                    animation: `float ${4 + i * 0.8}s ease-in-out ${i * 0.7}s infinite`,
-                    zIndex: 3 - i,
-                  } as React.CSSProperties}
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono text-text-muted tracking-wider">{card.tag}</span>
-                    <span className="w-2 h-2 rounded-full" style={{ background: dotColors[i] }} />
-                  </div>
-                  {/* Real image */}
-                  <div className="rounded-lg mb-4 relative overflow-hidden" style={{ height: 110 }}>
-                    <img src={card.src} alt={card.tag} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="font-semibold text-sm text-text-primary mb-1">{card.headline}</div>
-                  <div className="flex gap-4 mt-3 pt-3 border-t border-border">
-                    <div>
-                      <div className="font-mono text-xs font-bold" style={{ color: metricColors[i] }}>{card.metric}</div>
-                      <div className="text-[9px] text-text-muted">{card.metricLabel}</div>
-                    </div>
-                    <div>
-                      <div className="font-mono text-xs font-bold text-text-primary">72h</div>
-                      <div className="text-[9px] text-text-muted">Delivered</div>
-                    </div>
-                  </div>
+            {/* RIGHT: Concept images */}
+            <div className="hero-cards-block hero-images-block hidden md:flex flex-col gap-3">
+              <div className="flex gap-3">
+                <div className="rounded-xl overflow-hidden flex-1" style={{ aspectRatio: '4/3' }}>
+                  <img src={conceptImages[0].src} alt="AI concept" className="w-full h-full object-cover" />
                 </div>
-              ))}
-              <div className="absolute inset-0 rounded-full opacity-[0.05] pointer-events-none"
-                style={{ background: 'radial-gradient(circle at 60% 50%, var(--accent), transparent 60%)' }} />
+                <div className="rounded-xl overflow-hidden" style={{ aspectRatio: '3/4', width: 140 }}>
+                  <img src={conceptImages[1].src} alt="AI concept" className="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden w-full" style={{ aspectRatio: '16/7' }}>
+                <img src={conceptImages[2].src} alt="AI concept" className="w-full h-full object-cover" />
+              </div>
+              <p className="text-[10px] font-mono text-text-muted text-right">
+                Creative concepts · AI-generated · Not affiliated with any brand shown
+              </p>
             </div>
           </div>
         </div>
