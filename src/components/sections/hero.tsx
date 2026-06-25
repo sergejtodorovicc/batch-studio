@@ -133,17 +133,11 @@ const tl = gsap.timeline({
 
             {/* RIGHT: Concept images */}
             <div className="hero-cards-block hero-images-block hidden md:flex flex-col gap-3">
-              <div className="flex gap-3">
-                <div className="rounded-xl overflow-hidden flex-1" style={{ aspectRatio: '4/3' }}>
-                  <img src={conceptImages[0].src} alt="AI concept" className="w-full h-full object-cover" />
-                </div>
-                <div className="rounded-xl overflow-hidden" style={{ aspectRatio: '3/4', width: 140 }}>
-                  <img src={conceptImages[1].src} alt="AI concept" className="w-full h-full object-cover" />
-                </div>
+              <div className="flex gap-3 items-start">
+                <img src={conceptImages[0].src} alt="AI concept" className="rounded-xl flex-1 min-w-0" style={{ width: '60%', height: 'auto' }} />
+                <img src={conceptImages[1].src} alt="AI concept" className="rounded-xl" style={{ width: '38%', height: 'auto' }} />
               </div>
-              <div className="rounded-xl overflow-hidden w-full" style={{ aspectRatio: '16/7' }}>
-                <img src={conceptImages[2].src} alt="AI concept" className="w-full h-full object-cover" />
-              </div>
+              <img src={conceptImages[2].src} alt="AI concept" className="rounded-xl w-full" style={{ height: 'auto' }} />
               <p className="text-[10px] font-mono text-text-muted text-right">
                 Creative concepts · AI-generated · Not affiliated with any brand shown
               </p>
