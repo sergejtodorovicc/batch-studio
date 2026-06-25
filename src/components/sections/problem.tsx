@@ -176,7 +176,7 @@ export default function Problem() {
             className="problem-right relative flex flex-col justify-center px-14 border border-l-0 border-border transition-colors duration-700"
             style={{ background: 'linear-gradient(135deg, #0A0705 0%, #150E09 100%)' }}
           >
-            <div className="absolute top-8 left-8 label text-accent/60">The Batch Way</div>
+            <div className="absolute top-8 left-8 label text-accent/60">The Séance Way</div>
 
             {/* Savings badge */}
             <div

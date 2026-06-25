@@ -25,7 +25,7 @@ const services = [
     priceNum: 4500,
     price: '€4,500',
     period: '/month',
-    desc: '30 ads every month. Delivered in 72 hours. Gets better every batch.',
+    desc: '30 ads every month. Delivered in 72 hours. Gets better every séance.',
     deliverables: ['20 static ads', '6 video ads', '4 creator-style videos', 'Weekly drops', 'Monthly win report', 'Slack channel', 'We track what works'],
     cta: 'Start Engine',
     highlight: true,

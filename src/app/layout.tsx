@@ -25,12 +25,12 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'BATCH — AI-Native Creative Production',
-  description: '30 launch-ready ads in 72 hours. Built on your real ad data. No cameras, no shoots, no contracts.',
+  title: 'SÉANCE — AI Creative Production',
+  description: 'We summon content that was never filmed. 30 ads in 72 hours. No cameras. No shoots. No contracts.',
   keywords: ['AI creative agency', 'AI ads', 'AI UGC', 'performance creative', 'AI commercials'],
   openGraph: {
-    title: 'BATCH — AI-Native Creative Production',
-    description: 'We build ads that don\'t need cameras.',
+    title: 'SÉANCE — AI Creative Production',
+    description: 'We summon content that was never filmed. 30 ads in 72 hours. No cameras. No shoots. No contracts.',
     type: 'website',
   },
 }

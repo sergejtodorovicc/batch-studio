@@ -21,7 +21,7 @@ const testimonials = [
     initials: 'MT',
   },
   {
-    quote: 'Batch shipped our first ads before our old agency replied to our brief. Not joking.',
+    quote: 'Séance shipped our first ads before our old agency replied to our brief. Not joking.',
     author: 'Founder',
     company: 'Beauty DTC Brand',
     initials: 'SK',
@@ -33,7 +33,7 @@ const testimonials = [
     initials: 'AK',
   },
   {
-    quote: 'The Brand AI Kit was the game changer. Every batch looks exactly like us. We stopped briefing and started approving.',
+    quote: 'The Brand AI Kit was the game changer. Every séance looks exactly like us. We stopped briefing and started approving.',
     author: 'Creative Director',
     company: 'Wellness Brand',
     initials: 'CR',

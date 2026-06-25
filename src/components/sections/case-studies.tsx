@@ -14,7 +14,7 @@ const cases = [
     challenge: 'Their ads burned out every 3 weeks. By the time the agency delivered new ones, results had already dropped.',
     challengePoints: [
       'Ad ideas burned out every 3 weeks',
-      'Agency batch took 3 weeks to arrive',
+      'Agency delivery took 3 weeks to arrive',
       'Sales dropping every single month',
       'Only 8 ads per month to test',
     ],

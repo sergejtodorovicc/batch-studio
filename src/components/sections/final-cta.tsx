@@ -197,9 +197,9 @@ export default function FinalCTA() {
               type="submit"
               className="ripple-container pulse-cta inline-flex items-center justify-center gap-3 px-8 py-5 bg-accent text-bg font-bold text-base hover:opacity-90 transition-opacity"
             >
-              Book Free Strategy Call →
+              Book a Session →
             </button>
-            <p className="text-text-muted text-xs mt-2">Or email us directly: hello@batch.studio · We reply within 24h</p>
+            <p className="text-text-muted text-xs mt-2">Or email us directly: hello@seance.studio · We reply within 24h</p>
           </form>
         </div>
       </div>

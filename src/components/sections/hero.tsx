@@ -148,7 +148,7 @@ export default function Hero() {
             <div className="hero-text-block" style={{ perspective: '1000px' }}>
               <div className="flex items-center gap-3 mb-5">
                 <span className="accent-dot animate-[pulse-slow_3s_ease-in-out_infinite]" />
-                <span className="label">Creative Production Studio</span>
+                <span className="label">AI Creative Production · No Cameras</span>
               </div>
 
               <div className="mb-5">
@@ -170,12 +170,12 @@ export default function Hero() {
               </div>
 
               <p className="hero-sub opacity-0 text-text-muted text-base md:text-lg leading-relaxed max-w-md mb-7">
-                30 launch-ready creatives. 72 hours. Built on your real ad data.
+                We summon 30 launch-ready ads in 72 hours. No cameras. No shoots. No contracts.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <a href="#contact" className="hero-cta opacity-0 inline-flex items-center gap-2 px-7 py-4 bg-accent text-bg font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity">
-                  Book Free Strategy Call
+                  Book a Session
                 </a>
                 <a href="#process" className="hero-cta opacity-0 inline-flex items-center gap-2 px-7 py-4 border border-border text-text-primary text-sm tracking-wide hover:border-text-muted transition-colors">
                   See How It Works →

@@ -4,8 +4,8 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    q: 'How quickly do we get our first batch?',
-    a: 'Your first batch arrives in 7 days. Day 0 is onboarding, Day 1 is hook mining, Day 2 is brief approval, Days 3–4 are production, Days 5–6 are polish, Day 7 is delivery. After the first batch, ongoing deliveries happen every 72 hours.',
+    q: 'How quickly do we get our first séance?',
+    a: 'Your first séance arrives in 7 days. Day 0 is onboarding, Day 1 is hook mining, Day 2 is brief approval, Days 3–4 are production, Days 5–6 are polish, Day 7 is delivery. After the first séance, ongoing deliveries happen every 72 hours.',
   },
   {
     q: 'Do we need to do a photo shoot?',
@@ -13,11 +13,11 @@ const faqs = [
   },
   {
     q: 'What do you need from us to get started?',
-    a: 'Product photos, your brand guidelines or style guide, and a 30-minute onboarding call. After that, we handle everything. You review the creative brief and approve the final batch.',
+    a: 'Product photos, your brand guidelines or style guide, and a 30-minute onboarding call. After that, we handle everything. You review the creative brief and approve the final séance.',
   },
   {
     q: 'What if we do not like the ads?',
-    a: 'Every plan includes revision rounds. If something does not match the brief, we fix it. Sprint includes one revision round. Engine and Engine Pro include revisions on every batch.',
+    a: 'Every plan includes revision rounds. If something does not match the brief, we fix it. Sprint includes one revision round. Engine and Engine Pro include revisions on every séance.',
   },
   {
     q: 'Is there a contract or minimum commitment?',
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'How is this different from a freelancer or agency?',
-    a: 'Speed, consistency, and data. Most agencies take 3 weeks and deliver 10 ads. We deliver 30 ads in 72 hours — and every batch is built on real performance data from the last one. One team. No handoffs.',
+    a: 'Speed, consistency, and data. Most agencies take 3 weeks and deliver 10 ads. We deliver 30 ads in 72 hours — and every séance is built on real performance data from the last one. One team. No handoffs.',
   },
 ]
 

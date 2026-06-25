@@ -329,7 +329,7 @@ export default function System() {
               </div>
 
               <div>
-                <div className="label text-text-muted mb-3">Click rate improvement — batch over batch</div>
+                <div className="label text-text-muted mb-3">Click rate improvement — séance over séance</div>
                 <div className="flex items-end gap-2" style={{ height: 110 }}>
                   {graphData.map((h, i) => (
                     <div key={i} className="flex-1 flex flex-col items-center gap-1">

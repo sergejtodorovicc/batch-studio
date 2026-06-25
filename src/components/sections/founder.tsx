@@ -15,7 +15,7 @@ const quoteLines = [
   'than their competitors can react.',
 ]
 
-const FOUNDER_NOTE = "I built Batch because I watched great products lose to inferior ones — just because the competitor had more creative volume and faster production. AI changed what is possible. We built the system to make sure the right brands win."
+const FOUNDER_NOTE = "I built Séance because I watched great products lose to inferior ones — just because the competitor had more creative volume and faster production. AI changed what is possible. We built the ritual to make sure the right brands win."
 
 export default function Founder() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -123,7 +123,7 @@ export default function Founder() {
             />
             <div className="mt-10 pt-6 border-t border-border">
               <div className="text-sm font-semibold text-text-primary">Sergej Todorovic</div>
-              <div className="label mt-1">Founder &amp; Creative Director, Batch</div>
+              <div className="label mt-1">Founder &amp; Creative Director, Séance</div>
             </div>
           </div>
 

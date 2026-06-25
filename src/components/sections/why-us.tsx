@@ -15,15 +15,15 @@ const competitors = [
 ]
 
 const advantages = [
-  { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>', title: '72-Hour Delivery', body: 'Guaranteed. Every batch, every client. Miss it and you don\'t pay.' },
-  { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4zm0 0c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"/></svg>', title: 'Gets Better Each Month', body: 'Data-driven briefs mean every batch learns from the last. Month 3 outperforms month 1. Every time.' },
-  { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M7 9H5m0 6h2m10-6h2m0 6h-2M9 7V5m6 0v2M9 17v2m6-2v2"/></svg>', title: 'Built Around Your Brand', body: 'We train our system on your brand once. After that, every batch is consistent — no briefing required from you.' },
+  { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>', title: '72-Hour Delivery', body: 'Guaranteed. Every séance, every client. Miss it and you don\'t pay.' },
+  { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4zm0 0c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"/></svg>', title: 'Gets Better Each Month', body: 'Data-driven briefs mean every séance learns from the last. Month 3 outperforms month 1. Every time.' },
+  { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M7 9H5m0 6h2m10-6h2m0 6h-2M9 7V5m6 0v2M9 17v2m6-2v2"/></svg>', title: 'Built Around Your Brand', body: 'We train our system on your brand once. After that, every séance is consistent — no briefing required from you.' },
   { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 20V10m-6 10V4M6 20v-6"/></svg>', title: 'We Track What Works', body: 'We check your real ad results every week. The longer you stay, the better we get at making your specific customer click.' },
   { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>', title: 'Pause Anytime', body: 'No contracts. No minimum term. We earn retention — we don\'t enforce it.' },
   { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>', title: 'Your Results Drive Everything', body: 'We report your ad metrics, not our deliverables. Results, not receipts.' },
 ]
 
-const CLOSING_STAT = 'Brands working with us test 4 times more creative angles than their competitors. That is 4 times more chances to find the ad that scales their business.'
+const CLOSING_STAT = 'Brands that work with Séance test 4 times more creative angles than their competitors. That is 4 times more chances to find the ad that scales their business.'
 
 function Check({ yes }: { yes: boolean }) {
   return (
@@ -97,7 +97,7 @@ export default function WhyUs() {
           >
             Why founders switch
             <br />
-            <span className="text-accent">to Batch.</span>
+            <span className="text-accent">to Séance.</span>
           </h2>
         </div>
 
@@ -133,7 +133,7 @@ export default function WhyUs() {
               ))}
               {/* Obsidian row — always visible as the "goal" */}
               <tr className="border border-accent/30 bg-accent/5">
-                <td className="py-4 pr-4 pl-4 font-semibold text-accent text-sm">Batch</td>
+                <td className="py-4 pr-4 pl-4 font-semibold text-accent text-sm">Séance</td>
                 <td className="py-4 px-4 font-mono font-bold text-text-primary text-sm">From €1,500/mo</td>
                 <td className="py-4 px-4 font-mono font-bold text-text-primary text-sm">10–60</td>
                 <td className="py-4 px-4 font-bold text-text-primary text-sm">72 hours</td>

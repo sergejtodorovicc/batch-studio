@@ -28,7 +28,7 @@ const days = [
   {
     day: 'Day 3–4',
     title: 'Generation',
-    body: 'AI batch production from your trained brand models. We generate 4× more than needed, then filter to the best 30.',
+    body: 'AI séance production from your trained brand models. We generate 4× more than needed, then filter to the best 30.',
     icon: '04',
   },
   {
@@ -40,7 +40,7 @@ const days = [
   {
     day: 'Day 7',
     title: 'Delivered',
-    body: '30 launch-ready creatives delivered to a shared workspace. Your first performance data arrives in 7 days — and we use it to improve the next batch.',
+    body: '30 launch-ready creatives delivered to a shared workspace. Your first performance data arrives in 7 days — and we use it to improve the next séance.',
     icon: '06',
     flip: true,
   },

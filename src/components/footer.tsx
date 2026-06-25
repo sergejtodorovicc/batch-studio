@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="font-bold tracking-widest text-sm mb-4">
-              BATCH<span className="text-accent">.</span>
+              SÉANCE<span className="text-accent">.</span>
             </div>
             <p className="text-text-muted text-sm max-w-sm">
               We make ads that don&apos;t need cameras.
@@ -35,10 +35,10 @@ export default function Footer() {
               30 creatives. 72 hours. No shoots, no contracts.
             </p>
             <a
-              href="mailto:hello@batch.studio"
+              href="mailto:hello@seance.studio"
               className="inline-block mt-6 text-sm text-text-muted hover:text-text-primary transition-colors"
             >
-              hello@batch.studio
+              hello@seance.studio
             </a>
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-xs text-text-muted">
-            © 2026 Batch. Built with AI. Delivered faster than your current agency responds to email.
+            © 2026 Séance. Built with AI. Delivered faster than your current agency responds to email.
           </p>
         </div>
       </div>

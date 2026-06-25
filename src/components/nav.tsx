@@ -32,7 +32,7 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const logoText = 'BATCH'
+  const logoText = 'SÉANCE'
 
   return (
     <nav
