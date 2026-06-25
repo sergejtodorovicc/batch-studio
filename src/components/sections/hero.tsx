@@ -14,9 +14,9 @@ const stats = [
 ]
 
 const adCards = [
-  { tag: 'AI Product Photo', headline: 'Glow differently.', metric: '2.4%', metricLabel: 'Click rate', color: 'var(--accent)', rotate: '-4deg', delay: 0 },
-  { tag: 'AI Video Ad :15s', headline: '30 ads. 72 hours.', metric: '-31%', metricLabel: 'Cost per customer', color: '#fff', rotate: '3deg', delay: 0.15 },
-  { tag: 'AI Creator Video', headline: 'No cameras needed.', metric: '44%', metricLabel: 'Stopped scrolling', color: '#888', rotate: '-2deg', delay: 0.3 },
+  { tag: 'AI Product Photo', headline: 'Glow differently.', metric: '2.4%', metricLabel: 'Click rate', color: 'var(--accent)', rotate: '-4deg', delay: 0, src: '/images/concept-miumiu.jpg' },
+  { tag: 'AI Video Ad :15s', headline: '30 ads. 72 hours.', metric: '-31%', metricLabel: 'Cost per customer', color: '#fff', rotate: '3deg', delay: 0.15, src: '/images/concept-givenchy.jpg' },
+  { tag: 'AI Creator Video', headline: 'No cameras needed.', metric: '44%', metricLabel: 'Stopped scrolling', color: '#888', rotate: '-2deg', delay: 0.3, src: '/images/concept-croc.jpg' },
 ]
 
 const cardGradients = [
@@ -211,10 +211,9 @@ export default function Hero() {
                     <span className="text-[10px] font-mono text-text-muted tracking-wider">{card.tag}</span>
                     <span className="w-2 h-2 rounded-full" style={{ background: dotColors[i] }} />
                   </div>
-                  {/* Mock visual */}
-                  <div className="rounded-lg mb-4 relative overflow-hidden"
-                    style={{ height: 110, background: cardGradients[i], border: cardBorders[i] }}>
-                    <CardMockVisual i={i} />
+                  {/* Real image */}
+                  <div className="rounded-lg mb-4 relative overflow-hidden" style={{ height: 110 }}>
+                    <img src={card.src} alt={card.tag} className="w-full h-full object-cover" />
                   </div>
                   <div className="font-semibold text-sm text-text-primary mb-1">{card.headline}</div>
                   <div className="flex gap-4 mt-3 pt-3 border-t border-border">

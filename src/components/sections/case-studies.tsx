@@ -31,9 +31,9 @@ const cases = [
       { value: '4×', label: 'more ad angles tested at once', direction: '↑' },
     ],
     adCards: [
-      { tag: 'Editorial · AI Concept', color: 'var(--accent)', src: '/images/concept-miumiu.jpg' },
-      { tag: 'Product · AI Concept', color: '#fff', src: '/images/concept-givenchy.jpg' },
-      { tag: 'Editorial · AI Concept', color: '#888', src: '/images/concept-croc.jpg' },
+      { tag: 'Static Ad', color: 'var(--accent)' },
+      { tag: 'Video 15s', color: '#fff' },
+      { tag: 'Creator Style', color: '#888' },
     ],
   },
   {
@@ -60,9 +60,9 @@ const cases = [
       { value: '0', label: 'photo shoots needed', direction: '' },
     ],
     adCards: [
-      { tag: 'Editorial · AI Concept', color: 'var(--accent)', src: '/images/concept-croc.jpg' },
-      { tag: 'Product · AI Concept', color: '#f0a0c0', src: '/images/concept-givenchy.jpg' },
-      { tag: 'Editorial · AI Concept', color: '#888', src: '/images/concept-miumiu.jpg' },
+      { tag: 'Product Photo', color: 'var(--accent)' },
+      { tag: 'Reels Ad', color: '#f0a0c0' },
+      { tag: 'Story Ad', color: '#888' },
     ],
   },
 ]
@@ -230,37 +230,27 @@ export default function CaseStudies() {
                       ))}
                     </div>
 
-                    {/* Creative concepts */}
+                    {/* Sample deliverables */}
                     <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="label text-text-muted">Creative concepts</div>
-                        <div className="label text-text-muted/50" style={{ fontSize: 9 }}>AI-generated · Not affiliated with any brand shown</div>
-                      </div>
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="label text-text-muted mb-3">Sample deliverables</div>
+                      <div className="flex gap-3">
                         {c.adCards.map((card, j) => (
                           <div
                             key={j}
-                            className="group relative rounded-xl overflow-hidden"
+                            className="glass rounded-xl p-4 flex-1 transition-all duration-300"
                             style={{
-                              aspectRatio: j === 1 ? '3/4' : '4/3',
-                              border: '1px solid var(--border)',
-                              transition: 'border-color 0.3s',
+                              borderColor: activeCase === i && activeCheckmarks.length > j
+                                ? 'rgba(212,137,26,0.25)'
+                                : 'var(--border)',
                             }}
-                            onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(212,137,26,0.4)')}
-                            onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
                           >
-                            <img
-                              src={card.src}
-                              alt={card.tag}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
                             <div
-                              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                              style={{ background: 'linear-gradient(to top, rgba(10,7,5,0.7) 0%, transparent 50%)' }}
-                            />
-                            <div className="absolute bottom-0 left-0 right-0 px-3 py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                              <span className="text-[9px] font-mono text-text-muted tracking-wider">{card.tag}</span>
+                              className="rounded-lg mb-3 flex items-center justify-center"
+                              style={{ height: 80, background: j === 0 ? 'linear-gradient(135deg, rgba(212,137,26,0.06), transparent)' : j === 1 ? 'linear-gradient(135deg, rgba(242,234,224,0.04), transparent)' : 'linear-gradient(135deg, rgba(155,136,120,0.04), transparent)' }}
+                            >
+                              <div className="w-8 h-8 rounded-lg" style={{ background: j === 0 ? 'rgba(212,137,26,0.12)' : j === 1 ? 'rgba(242,234,224,0.08)' : 'rgba(155,136,120,0.08)' }} />
                             </div>
+                            <div className="text-[10px] font-mono text-text-muted">{card.tag}</div>
                           </div>
                         ))}
                       </div>
