@@ -9,60 +9,60 @@ gsap.registerPlugin(ScrollTrigger)
 const cases = [
   {
     index: '01',
-    client: 'NOVAPURE',
-    tag: 'Supplements · DTC',
-    challenge: 'Their ads burned out every 3 weeks. By the time the agency delivered new ones, results had already dropped.',
+    client: 'NIKE',
+    tag: 'Sportswear · Global Campaign',
+    challenge: 'A global campaign across 12 markets. Traditional production couldn\'t keep pace with the number of creative variations needed to actually test what works.',
     challengePoints: [
-      'Ad ideas burned out every 3 weeks',
-      'Agency delivery took 3 weeks to arrive',
-      'Sales dropping every single month',
-      'Only 8 ads per month to test',
+      'Production agency: 6 weeks per campaign',
+      '$180K+ per global shoot, one creative direction',
+      '12 markets forced into the same visual',
+      'No time to test angles before launch',
     ],
     solutionPoints: [
-      '30 fresh ads delivered every month',
-      '10 different angles tested at once',
-      'AI trained on their specific products',
-      'Weekly report on which ads are winning',
+      '60 campaign variations delivered in 72 hours',
+      'Market-specific creative, consistent brand identity',
+      'AI trained on brand motion language and aesthetic',
+      'Performance data fed back into every next séance',
     ],
     results: [
-      { value: '31%', label: 'cheaper to get a customer', direction: '↓' },
-      { value: '2.4%', label: 'click rate (avg is 0.9%)', direction: '↑' },
-      { value: '72h', label: 'delivery time', direction: '' },
-      { value: '4×', label: 'more ad angles tested at once', direction: '↑' },
+      { value: '60', label: 'campaign assets in 72h', direction: '' },
+      { value: '12×', label: 'more creative variations tested', direction: '↑' },
+      { value: '72h', label: 'vs 6-week agency turnaround', direction: '' },
+      { value: '0', label: 'cameras, shoots, or travel needed', direction: '' },
     ],
     adCards: [
-      { tag: 'Static Ad', color: 'var(--accent)' },
-      { tag: 'Video 15s', color: '#fff' },
-      { tag: 'Creator Style', color: '#888' },
+      { tag: 'Campaign Visual', src: '/images/nike 1.png' },
+      { tag: 'Campaign Visual', src: '/images/nike 2.png' },
+      { tag: 'Campaign Visual', src: '/images/nike 3.png' },
     ],
   },
   {
     index: '02',
-    client: 'LUMÉ SKINCARE',
-    tag: 'Beauty · Skincare',
-    challenge: 'Content creators kept disappearing or missing deadlines. The brand looked different in every ad. They couldn\'t test enough concepts to find what actually worked.',
+    client: 'JOHNNIE WALKER',
+    tag: 'Premium Spirits · Lifestyle',
+    challenge: 'A heritage brand needing to speak to a new generation — without losing the premium aesthetic that took 200 years to build.',
     challengePoints: [
-      'Content creators going quiet last minute',
-      'Brand looked different in every ad',
-      'Could only test 8 ads per month',
-      'Paying €31 to get each new customer',
+      'Premium production: slow and expensive',
+      'New audience, same old creative playbook',
+      'Agency content felt generic and off-brand',
+      'Only 4–6 assets delivered per quarter',
     ],
     solutionPoints: [
-      'AI video actors — no real people needed',
-      '20 product scenes, zero photo shoots',
-      'Fresh ads with performance data weekly',
-      'Same brand look across every single ad',
+      'AI-generated luxury visuals trained on the brand',
+      'Brand language built in, not guessed at',
+      '30 premium assets per month, not per quarter',
+      'Consistent high-end look across every frame',
     ],
     results: [
-      { value: '44%', label: 'Viewers stopped scrolling', direction: '↑' },
-      { value: '€18', label: 'to get a customer (was €31)', direction: '↓' },
-      { value: '60', label: 'ads in the first month', direction: '' },
-      { value: '0', label: 'photo shoots needed', direction: '' },
+      { value: '30', label: 'premium assets per month', direction: '' },
+      { value: '5×', label: 'more content than before', direction: '↑' },
+      { value: '72h', label: 'delivery per séance', direction: '' },
+      { value: '0', label: 'off-brand assets in final delivery', direction: '' },
     ],
     adCards: [
-      { tag: 'Product Photo', color: 'var(--accent)' },
-      { tag: 'Reels Ad', color: '#f0a0c0' },
-      { tag: 'Story Ad', color: '#888' },
+      { tag: 'Brand Visual', src: '/images/jw 1.png' },
+      { tag: 'Brand Visual', src: '/images/jw 2.png' },
+      { tag: 'Brand Visual', src: '/images/jw 3.png' },
     ],
   },
 ]
@@ -230,27 +230,16 @@ export default function CaseStudies() {
                       ))}
                     </div>
 
-                    {/* Sample deliverables */}
+                    {/* Creative concepts */}
                     <div>
-                      <div className="label text-text-muted mb-3">Sample deliverables</div>
-                      <div className="flex gap-3">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="label text-text-muted">Creative concepts</div>
+                        <div className="label text-text-muted/50" style={{ fontSize: 9 }}>AI-generated · Concept only · Not affiliated with any brand shown</div>
+                      </div>
+                      <div className="flex gap-2">
                         {c.adCards.map((card, j) => (
-                          <div
-                            key={j}
-                            className="glass rounded-xl p-4 flex-1 transition-all duration-300"
-                            style={{
-                              borderColor: activeCase === i && activeCheckmarks.length > j
-                                ? 'rgba(212,137,26,0.25)'
-                                : 'var(--border)',
-                            }}
-                          >
-                            <div
-                              className="rounded-lg mb-3 flex items-center justify-center"
-                              style={{ height: 80, background: j === 0 ? 'linear-gradient(135deg, rgba(212,137,26,0.06), transparent)' : j === 1 ? 'linear-gradient(135deg, rgba(242,234,224,0.04), transparent)' : 'linear-gradient(135deg, rgba(155,136,120,0.04), transparent)' }}
-                            >
-                              <div className="w-8 h-8 rounded-lg" style={{ background: j === 0 ? 'rgba(212,137,26,0.12)' : j === 1 ? 'rgba(242,234,224,0.08)' : 'rgba(155,136,120,0.08)' }} />
-                            </div>
-                            <div className="text-[10px] font-mono text-text-muted">{card.tag}</div>
+                          <div key={j} className="flex-1 rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+                            <img src={card.src} alt={card.tag} className="w-full h-auto block" />
                           </div>
                         ))}
                       </div>
