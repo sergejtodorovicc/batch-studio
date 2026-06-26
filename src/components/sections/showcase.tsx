@@ -7,13 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const items = [
-  { tag: 'AI Product Photo', label: 'Supplement Line', category: 'AI Product Photography', color: '#D4891A', aspect: '4/5', hasVideo: false },
-  { tag: 'AI Video Ad :15s', label: 'Beauty Brand', category: 'AI Video Ads', color: '#ffffff', aspect: '9/16', hasVideo: true },
-  { tag: 'AI Creator Video', label: 'D2C Skincare', category: 'Creator Video Ads', color: '#888888', aspect: '9/16', hasVideo: true },
-  { tag: 'AI Commercial :30s', label: 'Hero Film', category: 'AI Commercials', color: '#D4891A', aspect: '16/9', hasVideo: true },
-  { tag: 'AI Static Ad', label: 'Fashion Drop', category: 'AI Performance Creative', color: '#ffffff', aspect: '1/1', hasVideo: false },
-  { tag: 'AI Product Photo', label: 'Wellness Brand', category: 'AI Product Photography', color: '#666', aspect: '4/5', hasVideo: false },
-  { tag: 'AI Landing Page', label: 'E-commerce Hero', category: 'AI Performance Creative', color: '#D4891A', aspect: '16/9', hasVideo: false },
+  { tag: 'AI Campaign Visual', label: 'Nike', category: 'AI Campaign Creative', color: '#D4891A', aspect: '4/5', src: '/images/nike 1.png' },
+  { tag: 'AI Brand Visual', label: 'Johnnie Walker', category: 'AI Brand Creative', color: '#ffffff', aspect: '9/16', src: '/images/jw 1.png' },
+  { tag: 'AI Campaign Visual', label: 'Nike', category: 'AI Campaign Creative', color: '#888888', aspect: '4/5', src: '/images/nike 2.png' },
+  { tag: 'AI Editorial', label: 'Prada', category: 'AI Editorial Creative', color: '#D4891A', aspect: '16/9', src: '/images/prada 1.png' },
+  { tag: 'AI Brand Visual', label: 'Johnnie Walker', category: 'AI Brand Creative', color: '#ffffff', aspect: '9/16', src: '/images/jw 2.png' },
+  { tag: 'AI Campaign Visual', label: 'Nike', category: 'AI Campaign Creative', color: '#666', aspect: '4/5', src: '/images/nike 3.png' },
+  { tag: 'AI Brand Visual', label: 'Johnnie Walker', category: 'AI Brand Creative', color: '#D4891A', aspect: '9/16', src: '/images/jw 3.png' },
 ]
 
 export default function Showcase() {
@@ -112,66 +112,33 @@ function ShowcaseCard({ item }: { item: typeof items[0] }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Preview area */}
+      {/* Image area */}
       <div
         ref={videoRef}
-        className="relative flex items-center justify-center transition-all duration-500"
-        style={{
-          aspectRatio: item.aspect,
-          background: hovered
-            ? `linear-gradient(135deg, ${item.color}18, ${item.color}08)`
-            : `linear-gradient(135deg, ${item.color}0d, transparent)`,
-          borderBottom: `1px solid ${item.color}15`,
-        }}
+        className="relative overflow-hidden"
+        style={{ aspectRatio: item.aspect }}
       >
-        {/* Placeholder content */}
-        <div className="flex flex-col items-center gap-3 opacity-40">
-          <div className="rounded-xl" style={{ width: 44, height: 44, background: item.color }} />
-          <div className="rounded" style={{ width: 72, height: 6, background: item.color }} />
-          <div className="rounded" style={{ width: 52, height: 4, background: item.color, opacity: 0.5 }} />
-        </div>
-        <div style={{ position: 'absolute', bottom: 16, left: 0, right: 0, textAlign: 'center' }}>
-          <span style={{ fontSize: 10, fontFamily: 'monospace', color: item.color, opacity: 0.5 }}>
-            {item.label}
-          </span>
-        </div>
-
-        {/* Hover video autoplay indicator */}
-        {item.hasVideo && (
-          <div
-            className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
-            style={{ opacity: hovered ? 1 : 0 }}
-          >
-            <div
-              className="w-12 h-12 rounded-full flex items-center justify-center"
-              style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)' }}
-            >
-              {/* Animated play bars (simulate playing) */}
-              <div className="flex items-end gap-0.5 h-4">
-                {[3, 5, 4, 6, 3].map((h, i) => (
-                  <div
-                    key={i}
-                    className="w-1 rounded-full bg-white"
-                    style={{
-                      height: hovered ? `${h * 3}px` : '6px',
-                      transition: `height ${0.2 + i * 0.05}s ease-in-out`,
-                      transitionDelay: hovered ? `${i * 0.08}s` : '0s',
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
+        <img
+          src={item.src}
+          alt={item.label}
+          className="w-full h-full object-cover transition-transform duration-500"
+          style={{ transform: hovered ? 'scale(1.04)' : 'scale(1)' }}
+        />
         {/* Tag chip */}
         <div className="absolute top-3 left-3">
           <span
             className="text-[10px] font-mono px-2 py-1 rounded"
-            style={{ background: `${item.color}1a`, color: item.color, border: `1px solid ${item.color}28` }}
+            style={{ background: 'rgba(10,7,5,0.7)', color: item.color, border: `1px solid ${item.color}40`, backdropFilter: 'blur(4px)' }}
           >
             {item.tag}
           </span>
+        </div>
+        {/* Disclaimer */}
+        <div
+          className="absolute bottom-2 right-2 transition-opacity duration-300"
+          style={{ opacity: hovered ? 1 : 0 }}
+        >
+          <span className="text-[8px] font-mono text-white/40">AI concept · Not affiliated</span>
         </div>
       </div>
 
