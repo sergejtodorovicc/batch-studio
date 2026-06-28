@@ -129,7 +129,7 @@ export default function Process() {
           {/* Timeline track */}
           <div className="relative">
             {/* Cards above (even indices) */}
-            <div className="flex justify-between mb-8">
+            <div className="process-row-top flex justify-between mb-8">
               {days.map((d, i) =>
                 i % 2 === 0 ? (
                   <div
@@ -144,13 +144,13 @@ export default function Process() {
                     )}
                   </div>
                 ) : (
-                  <div key={i} style={{ width: `${100 / days.length - 2}%` }} />
+                  <div key={i} className="process-spacer" style={{ width: `${100 / days.length - 2}%` }} />
                 )
               )}
             </div>
 
             {/* Horizontal line + dots */}
-            <div className="relative flex items-center" style={{ height: 32 }}>
+            <div className="process-timeline-line relative flex items-center" style={{ height: 32 }}>
               {/* Background track */}
               <div className="absolute inset-y-0 left-0 right-0 flex items-center">
                 <div className="w-full h-px bg-border relative">
@@ -176,7 +176,7 @@ export default function Process() {
             </div>
 
             {/* Cards below (odd indices) */}
-            <div className="flex justify-between mt-8">
+            <div className="process-row-bottom flex justify-between mt-8">
               {days.map((d, i) =>
                 i % 2 !== 0 ? (
                   <div
@@ -187,7 +187,7 @@ export default function Process() {
                     <MilestoneCard d={d} above={false} />
                   </div>
                 ) : (
-                  <div key={i} style={{ width: `${100 / days.length - 2}%` }} />
+                  <div key={i} className="process-spacer" style={{ width: `${100 / days.length - 2}%` }} />
                 )
               )}
             </div>

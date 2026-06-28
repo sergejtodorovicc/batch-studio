@@ -273,13 +273,21 @@ html.lenis, html.lenis body { height: auto; }
     visibility: visible !important;
   }
 
-  /* Process: hide the horizontal timeline, show cards stacked */
+  /* Process: fix horizontal timeline → vertical stack */
   .process-card-0, .process-card-1, .process-card-2,
   .process-card-3, .process-card-4, .process-card-5 {
     width: 100% !important;
     opacity: 1 !important;
-    margin-bottom: 12px;
+    margin-bottom: 0 !important;
   }
+  .process-row-top,
+  .process-row-bottom {
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin: 0 !important;
+  }
+  .process-timeline-line { display: none !important; }
+  .process-spacer { display: none !important; }
 
   /* Case studies: only show first case, no absolute positioning */
   .cs-panel-0 { position: relative !important; }
@@ -295,4 +303,41 @@ html.lenis, html.lenis body { height: auto; }
 
   /* Metrics grid: 2 cols on mobile */
   .metrics-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* ─── SYSTEM: fix absolute stage content collapsing to 0 height ── */
+  .system-inner {
+    height: auto !important;
+    padding-top: 0 !important;
+    flex-direction: column !important;
+  }
+  .system-stage-area {
+    position: relative !important;
+    flex: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  .system-pinned-header {
+    position: relative !important;
+    inset: auto !important;
+    padding: 0 0 16px !important;
+  }
+  .stage-01-content,
+  .stage-02-content,
+  .stage-03-content,
+  .stage-04-content,
+  .stage-05-content {
+    position: relative !important;
+    inset: auto !important;
+    padding: 28px 20px 40px !important;
+    border-bottom: 1px solid var(--border) !important;
+    height: auto !important;
+  }
+  .angle-card { opacity: 1 !important; }
+  .gen-card   { opacity: 1 !important; }
+  .notif-card { opacity: 1 !important; }
+
+  /* ─── MOBILE CTA: iOS safe area (home indicator) ────────────── */
+  .mobile-cta-bar {
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 0px)) !important;
+  }
 }

@@ -129,7 +129,7 @@ export default function FinalCTA() {
         }}
       />
 
-      <div className="container relative z-10 pt-32 pb-56">
+      <div className="container relative z-10 pt-20 md:pt-32 pb-28 md:pb-56">
         <div className="max-w-5xl">
           {/* Headline */}
           <div className="mb-8">
@@ -137,7 +137,7 @@ export default function FinalCTA() {
               <h2
                 className="cta-line-red font-display font-bold opacity-0"
                 style={{
-                  fontSize: 'clamp(52px, 10vw, 150px)',
+                  fontSize: 'clamp(32px, 9vw, 150px)',
                   letterSpacing: '-0.04em',
                   lineHeight: '0.95',
                   color: 'var(--danger)',
@@ -150,7 +150,7 @@ export default function FinalCTA() {
               <h2
                 className="cta-line-2 font-display font-bold opacity-0 text-accent"
                 style={{
-                  fontSize: 'clamp(52px, 10vw, 150px)',
+                  fontSize: 'clamp(32px, 9vw, 150px)',
                   letterSpacing: '-0.04em',
                   lineHeight: '0.95',
                 }}
@@ -170,7 +170,7 @@ export default function FinalCTA() {
             className="cta-buttons opacity-0 flex flex-col gap-4 max-w-lg"
             onSubmit={(e) => { e.preventDefault(); alert('Message sent! We will be in touch within 24 hours.') }}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="Your name"

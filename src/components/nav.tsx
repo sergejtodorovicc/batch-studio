@@ -85,7 +85,7 @@ export default function Nav() {
             </button>
             <a
               href="#contact"
-              className="nav-cta opacity-0 text-sm font-medium px-5 py-2.5 border border-accent text-accent hover:bg-accent hover:text-bg transition-all duration-200 tracking-wide"
+              className="nav-cta opacity-0 hidden md:inline-flex text-sm font-medium px-5 py-2.5 border border-accent text-accent hover:bg-accent hover:text-bg transition-all duration-200 tracking-wide"
             >
               Book a Call →
             </a>

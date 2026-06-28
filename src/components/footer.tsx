@@ -21,7 +21,7 @@ const links: Record<string, { label: string; href: string }[]> = {
 export default function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="container pt-40 pb-24">
+      <div className="container pt-20 md:pt-40 pb-16 md:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-16">
           {/* Brand */}
           <div>

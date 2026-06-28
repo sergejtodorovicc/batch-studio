@@ -143,7 +143,7 @@ export default function SocialProof() {
         {/* Metrics */}
         <div className="metrics-grid grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
           {metrics.map((m, i) => (
-            <div key={i} className="metric-card opacity-0 glass rounded-2xl p-8 text-center">
+            <div key={i} className="metric-card opacity-0 glass rounded-2xl p-5 md:p-8 text-center">
               <div className="font-mono font-bold text-text-primary mb-2" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
                 <CountUpMetric value={m.value} suffix={m.suffix} />
               </div>

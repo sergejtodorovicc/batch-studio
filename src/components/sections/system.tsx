@@ -159,7 +159,7 @@ export default function System() {
   return (
     <section ref={wrapperRef} className="sticky-section" style={{ height: '500vh' }}>
       <div className="sticky-inner">
-        <div className="h-full flex pt-20">
+        <div className="system-inner h-full flex pt-20">
 
           {/* ── LEFT SIDEBAR ── */}
           <div className="hidden lg:flex flex-col justify-center w-48 shrink-0 px-8 border-r border-border">
@@ -182,10 +182,10 @@ export default function System() {
           </div>
 
           {/* ── RIGHT: stage content ── */}
-          <div className="relative flex-1 overflow-hidden">
+          <div className="system-stage-area relative flex-1 overflow-hidden">
 
             {/* Pinned top label — always visible */}
-            <div className="absolute top-8 left-8 right-8 flex items-center justify-between z-10">
+            <div className="system-pinned-header absolute top-8 left-8 right-8 flex items-center justify-between z-10">
               <h2 className="font-display font-bold text-text-primary" style={{ fontSize: 'clamp(28px, 3vw, 48px)', letterSpacing: '-0.02em' }}>
                 Here&apos;s how we do it.
               </h2>
