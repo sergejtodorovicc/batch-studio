@@ -105,7 +105,7 @@ export default function Process() {
   }, [])
 
   return (
-    <section ref={wrapperRef} className="sticky-section border-t border-border" style={{ height: '400vh' }}>
+    <section ref={wrapperRef} id="process" className="sticky-section border-t border-border" style={{ height: '400vh' }}>
       <div className="sticky-inner flex flex-col justify-center">
         <div className="container">
           <div className="flex items-center gap-3 mb-10">

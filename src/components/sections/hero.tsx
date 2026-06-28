@@ -90,7 +90,7 @@ const tl = gsap.timeline({
                 <span className="label">AI Creative Production · No Cameras</span>
               </div>
 
-              <div className="mb-5">
+              <h1 className="mb-5">
                 {['We Build Ads', "That Don't", 'Need Cameras.'].map((line, i) => (
                   <div key={i} className="overflow-hidden">
                     <span
@@ -106,7 +106,7 @@ const tl = gsap.timeline({
                     </span>
                   </div>
                 ))}
-              </div>
+              </h1>
 
               <p className="hero-sub opacity-0 text-text-muted text-base md:text-lg leading-relaxed max-w-md mb-7">
                 We summon 30 launch-ready ads in 72 hours. No cameras. No shoots. No contracts.
@@ -134,10 +134,10 @@ const tl = gsap.timeline({
             {/* RIGHT: Concept images */}
             <div className="hero-cards-block hero-images-block hidden md:flex flex-col gap-3">
               <div className="flex gap-3 items-start">
-                <img src={conceptImages[0].src} alt="AI concept" className="rounded-xl flex-1 min-w-0" style={{ width: '60%', height: 'auto' }} />
-                <img src={conceptImages[1].src} alt="AI concept" className="rounded-xl" style={{ width: '38%', height: 'auto' }} />
+                <img src={conceptImages[0].src} alt="AI-generated fashion campaign visual — concept by SÉANCE, not affiliated with any brand" className="rounded-xl flex-1 min-w-0" style={{ width: '60%', height: 'auto' }} />
+                <img src={conceptImages[1].src} alt="AI-generated luxury editorial visual — concept by SÉANCE, not affiliated with any brand" className="rounded-xl" style={{ width: '38%', height: 'auto' }} />
               </div>
-              <img src={conceptImages[2].src} alt="AI concept" className="rounded-xl w-full" style={{ height: 'auto' }} />
+              <img src={conceptImages[2].src} alt="AI-generated product campaign visual — concept by SÉANCE, not affiliated with any brand" className="rounded-xl w-full" style={{ height: 'auto' }} />
               <p className="text-[10px] font-mono text-text-muted text-right">
                 Creative concepts · AI-generated · Not affiliated with any brand shown
               </p>

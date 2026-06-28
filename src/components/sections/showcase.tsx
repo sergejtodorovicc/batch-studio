@@ -120,7 +120,7 @@ function ShowcaseCard({ item }: { item: typeof items[0] }) {
       >
         <img
           src={item.src}
-          alt={item.label}
+          alt={`${item.tag} for ${item.label} — AI-generated concept by SÉANCE, not affiliated with ${item.label}`}
           className="w-full h-full object-cover transition-transform duration-500"
           style={{ transform: hovered ? 'scale(1.04)' : 'scale(1)' }}
         />

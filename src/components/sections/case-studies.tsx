@@ -239,7 +239,11 @@ export default function CaseStudies() {
                       <div className="flex gap-2">
                         {c.adCards.map((card, j) => (
                           <div key={j} className="flex-1 rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
-                            <img src={card.src} alt={card.tag} className="w-full h-auto block" />
+                            <img
+                              src={card.src}
+                              alt={`AI-generated ${card.tag.toLowerCase()} for ${c.client} — concept only, not affiliated with ${c.client}`}
+                              className="w-full h-auto block"
+                            />
                           </div>
                         ))}
                       </div>
