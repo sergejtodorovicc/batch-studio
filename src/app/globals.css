@@ -299,6 +299,7 @@ html.lenis, html.lenis body { height: auto; }
   /* Problem section: stack vertically instead of side-by-side */
   .problem-content { grid-template-columns: 1fr !important; }
   .problem-left, .problem-right { padding: 40px 20px !important; }
+  .problem-left { border-right: none !important; }
   .problem-right { border-left: none !important; border-top: 1px solid var(--border) !important; }
 
   /* Metrics grid: 2 cols on mobile */
@@ -365,4 +366,8 @@ html.lenis, html.lenis body { height: auto; }
     height: auto !important;
     overflow: visible !important;
   }
+
+  /* Case studies: solution items and result cards fully visible on mobile */
+  .cs-solution-item { opacity: 1 !important; }
+  .cs-result-card   { opacity: 1 !important; }
 }

@@ -71,11 +71,6 @@ export default function CaseStudies() {
   const wrapperRef = useRef<HTMLElement>(null)
   const [activeCase, setActiveCase] = useState(0)
   const [activeCheckmarks, setActiveCheckmarks] = useState<number[]>([])
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768)
-  }, [])
 
   useEffect(() => {
     if (window.innerWidth < 768) return
@@ -207,8 +202,8 @@ export default function CaseStudies() {
                         {c.solutionPoints.map((pt, j) => (
                           <div
                             key={j}
-                            className="flex items-center gap-3 transition-opacity duration-300"
-                            style={{ opacity: isMobile || (activeCase === i && activeCheckmarks.includes(j)) ? 1 : 0.15 }}
+                            className="cs-solution-item flex items-center gap-3 transition-opacity duration-300"
+                            style={{ opacity: activeCase === i && activeCheckmarks.includes(j) ? 1 : 0.15 }}
                           >
                             <span className="text-accent text-xs font-bold shrink-0">✓</span>
                             <span className="text-sm text-text-primary">{pt}</span>
@@ -224,8 +219,8 @@ export default function CaseStudies() {
                       {c.results.map((r, j) => (
                         <div
                           key={j}
-                          className="glass rounded-xl p-5 transition-opacity duration-300"
-                          style={{ opacity: isMobile || (activeCase === i && activeCheckmarks.includes(j)) ? 1 : 0.3 }}
+                          className="cs-result-card glass rounded-xl p-5 transition-opacity duration-300"
+                          style={{ opacity: activeCase === i && activeCheckmarks.includes(j) ? 1 : 0.3 }}
                         >
                           <div className="font-mono font-bold text-2xl text-accent flex items-baseline gap-1">
                             {r.direction && <span className="text-sm text-text-muted">{r.direction}</span>}

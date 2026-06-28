@@ -183,7 +183,7 @@ export default function Shift() {
               <hr className="flex-1 border-none border-t border-border" />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-start">
               {/* Left: pinned headline */}
               <div>
                 <p className="label mb-4 text-accent/70">Why right now is the right time</p>

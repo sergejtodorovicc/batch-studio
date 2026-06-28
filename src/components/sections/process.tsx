@@ -127,8 +127,17 @@ export default function Process() {
             </h2>
           </div>
 
-          {/* Timeline track */}
-          <div className="relative">
+          {/* Mobile: all days in chronological order */}
+          <div className="md:hidden flex flex-col gap-3">
+            {days.map((d, i) => (
+              <div key={i}>
+                {d.flip ? <FlipCard d={d} flipped={flipped} /> : <MilestoneCard d={d} above={i % 2 === 0} />}
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: alternating timeline */}
+          <div className="hidden md:block relative">
             {/* Cards above (even indices) */}
             <div className="process-row-top flex justify-between mb-8">
               {days.map((d, i) =>

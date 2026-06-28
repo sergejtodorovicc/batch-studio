@@ -136,7 +136,7 @@ export default function SocialProof() {
         {/* Headline */}
         <div className="sp-headline mb-16 opacity-0">
           <h2
-            style={{ fontSize: 'clamp(40px, 6vw, 90px)', letterSpacing: '-0.03em', lineHeight: '1' }}
+            style={{ fontSize: 'clamp(30px, 6vw, 90px)', letterSpacing: '-0.03em', lineHeight: '1' }}
             className="font-display font-bold"
           >
             The Numbers

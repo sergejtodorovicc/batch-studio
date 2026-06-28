@@ -97,7 +97,7 @@ const tl = gsap.timeline({
                     <span
                       className="hero-word block font-display font-bold leading-none opacity-0"
                       style={{
-                        fontSize: 'clamp(44px, 6.5vw, 100px)',
+                        fontSize: 'clamp(34px, 8.5vw, 100px)',
                         letterSpacing: '-0.04em',
                         color: i === 2 ? 'var(--accent)' : 'var(--text-primary)',
                         fontStyle: i === 2 ? 'italic' : 'normal',
