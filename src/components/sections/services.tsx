@@ -75,6 +75,7 @@ export default function Services() {
   const [activeIdx, setActiveIdx] = useState(0)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
       if (!wrapper) return
@@ -133,6 +134,10 @@ export default function Services() {
 
   // Count-up price animation when active service changes
   useEffect(() => {
+    if (window.innerWidth < 768) {
+      if (priceRef.current) priceRef.current.textContent = services[activeIdx].price
+      return
+    }
     const target = services[activeIdx].priceNum
     const obj = { val: 0 }
     gsap.to(obj, {

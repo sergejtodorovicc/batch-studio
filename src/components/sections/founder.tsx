@@ -23,6 +23,7 @@ export default function Founder() {
   const linesTriggered = useRef(false)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       // True mask reveal: lines come UP from below (yPercent 100 → 0, with overflow hidden wrapper)
       document.querySelectorAll('.founder-mask').forEach((wrapper, i) => {
@@ -119,8 +120,9 @@ export default function Founder() {
             <div className="label mb-6">From the founder</div>
             <p
               ref={noteRef}
-              className="typewriter-cursor text-text-muted text-sm leading-relaxed"
+              className="typewriter-cursor text-text-muted text-sm leading-relaxed hidden md:block"
             />
+            <p className="text-text-muted text-sm leading-relaxed md:hidden">{FOUNDER_NOTE}</p>
             <div className="mt-10 pt-6 border-t border-border">
               <div className="text-sm font-semibold text-text-primary">Sergej Todorovic</div>
               <div className="label mt-1">Founder &amp; Creative Director, Séance</div>

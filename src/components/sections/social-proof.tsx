@@ -51,6 +51,10 @@ function CountUpMetric({ value, suffix }: { value: number; suffix: string }) {
   const animated = useRef(false)
 
   useEffect(() => {
+    if (window.innerWidth < 768) {
+      if (ref.current) ref.current.textContent = value + suffix
+      return
+    }
     if (!ref.current) return
     ScrollTrigger.create({
       trigger: ref.current,
@@ -79,6 +83,7 @@ export default function SocialProof() {
   const dotGridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       // Metrics reveal
       gsap.fromTo('.sp-headline',

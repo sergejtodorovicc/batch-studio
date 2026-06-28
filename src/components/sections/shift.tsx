@@ -48,6 +48,7 @@ export default function Shift() {
 
   // ── Particle network ──
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -112,6 +113,7 @@ export default function Shift() {
 
   // ── GSAP scroll animations ──
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
       if (!wrapper) return

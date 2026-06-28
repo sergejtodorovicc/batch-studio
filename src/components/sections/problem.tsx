@@ -31,6 +31,7 @@ export default function Problem() {
   const headlineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
       if (!wrapper) return

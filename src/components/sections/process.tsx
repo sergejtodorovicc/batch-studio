@@ -52,6 +52,7 @@ export default function Process() {
   const [flipped, setFlipped] = useState(false)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
       if (!wrapper) return

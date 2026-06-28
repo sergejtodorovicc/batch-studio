@@ -13,6 +13,7 @@ export default function FinalCTA() {
 
   // ── Particle starfield ──
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -56,6 +57,7 @@ export default function FinalCTA() {
 
   // ── Scroll animations ──
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       gsap.fromTo('.cta-line-red',
         { opacity: 0, y: 60, color: 'var(--danger)' },

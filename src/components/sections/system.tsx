@@ -30,6 +30,7 @@ export default function System() {
   const typewriterRef = useRef<HTMLPreElement>(null)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
       if (!wrapper) return

@@ -340,4 +340,10 @@ html.lenis, html.lenis body { height: auto; }
   .mobile-cta-bar {
     padding-bottom: max(12px, env(safe-area-inset-bottom, 0px)) !important;
   }
+
+  /* Nav logo letters — GSAP won't run on mobile so override opacity-0 */
+  .nav-letter { opacity: 1 !important; }
+
+  /* Comparison table rows — inline opacity:0 in JSX, skipped by GSAP on mobile */
+  .comp-row { opacity: 1 !important; }
 }

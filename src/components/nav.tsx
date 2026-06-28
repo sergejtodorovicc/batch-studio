@@ -11,21 +11,23 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const letters = navRef.current?.querySelectorAll('.nav-letter')
-    if (letters) {
-      gsap.fromTo(letters,
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.04, ease: 'power3.out', delay: 0.3 }
+    if (window.innerWidth >= 768) {
+      const letters = navRef.current?.querySelectorAll('.nav-letter')
+      if (letters) {
+        gsap.fromTo(letters,
+          { opacity: 0, y: -10 },
+          { opacity: 1, y: 0, duration: 0.6, stagger: 0.04, ease: 'power3.out', delay: 0.3 }
+        )
+      }
+      gsap.fromTo('.nav-links-item',
+        { opacity: 0, y: -8 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.07, ease: 'power3.out', delay: 0.6 }
+      )
+      gsap.fromTo('.nav-cta',
+        { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out', delay: 0.9 }
       )
     }
-    gsap.fromTo('.nav-links-item',
-      { opacity: 0, y: -8 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.07, ease: 'power3.out', delay: 0.6 }
-    )
-    gsap.fromTo('.nav-cta',
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out', delay: 0.9 }
-    )
 
     const handleScroll = () => setScrolled(window.scrollY > 80)
     window.addEventListener('scroll', handleScroll)

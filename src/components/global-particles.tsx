@@ -7,6 +7,7 @@ export default function GlobalParticles() {
   const animRef = useRef<number>(0)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')

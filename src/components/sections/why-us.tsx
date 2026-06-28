@@ -39,6 +39,7 @@ export default function WhyUs() {
   const [visibleRows, setVisibleRows] = useState<number[]>([])
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       // Table rows stagger in quickly on section enter
       gsap.fromTo('.comp-row',
@@ -161,9 +162,13 @@ export default function WhyUs() {
           <div className="label text-accent/60 mb-4">The compound effect</div>
           <p
             ref={closingRef}
-            className="typewriter-cursor font-semibold text-text-primary leading-relaxed"
+            className="typewriter-cursor font-semibold text-text-primary leading-relaxed hidden md:block"
             style={{ fontSize: 'clamp(18px, 2.5vw, 28px)', letterSpacing: '-0.01em' }}
           />
+          <p
+            className="font-semibold text-text-primary leading-relaxed md:hidden"
+            style={{ fontSize: 'clamp(18px, 2.5vw, 28px)', letterSpacing: '-0.01em' }}
+          >{CLOSING_STAT}</p>
         </div>
       </div>
     </section>

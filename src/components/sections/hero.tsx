@@ -25,6 +25,7 @@ export default function Hero() {
   const stickyRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current
 
