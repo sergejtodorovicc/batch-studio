@@ -346,4 +346,23 @@ html.lenis, html.lenis body { height: auto; }
 
   /* Comparison table rows — inline opacity:0 in JSX, skipped by GSAP on mobile */
   .comp-row { opacity: 1 !important; }
+
+  /* Problem — old-item strikethrough lines (scaleX:0 inline) */
+  .old-strike-0, .old-strike-1, .old-strike-2,
+  .old-strike-3, .old-strike-4, .old-strike-5 { transform: scaleX(1) !important; }
+
+  /* System stage-03: hide shimmer overlay so gen-card content is readable */
+  .shimmer-bar { display: none !important; }
+
+  /* System stage-04: hide wipe overlay so "After" panel is visible */
+  .wipe-overlay-04 { display: none !important; }
+
+  /* System stage-05: show bar chart bars (scaleY:0 inline) */
+  .graph-bar { transform: scaleY(1) !important; }
+
+  /* Case studies panels: allow them to stack in flow */
+  .cs-panels-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
 }

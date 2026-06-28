@@ -71,6 +71,11 @@ export default function CaseStudies() {
   const wrapperRef = useRef<HTMLElement>(null)
   const [activeCase, setActiveCase] = useState(0)
   const [activeCheckmarks, setActiveCheckmarks] = useState<number[]>([])
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, [])
 
   useEffect(() => {
     if (window.innerWidth < 768) return
@@ -150,14 +155,14 @@ export default function CaseStudies() {
         </div>
 
         {/* Case panels — solid background prevents bleed-through during transition */}
-        <div className="relative h-full overflow-hidden">
+        <div className="cs-panels-container relative h-full overflow-hidden">
           {cases.map((c, i) => (
             <div
               key={i}
               className={`cs-panel-${i} absolute inset-0 flex items-center`}
               style={{ background: 'var(--bg)' }}
             >
-              <div className="container w-full pt-20">
+              <div className="container w-full pt-4 md:pt-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
                   {/* LEFT: Challenge + Solution */}
@@ -203,7 +208,7 @@ export default function CaseStudies() {
                           <div
                             key={j}
                             className="flex items-center gap-3 transition-opacity duration-300"
-                            style={{ opacity: activeCase === i && activeCheckmarks.includes(j) ? 1 : 0.15 }}
+                            style={{ opacity: isMobile || (activeCase === i && activeCheckmarks.includes(j)) ? 1 : 0.15 }}
                           >
                             <span className="text-accent text-xs font-bold shrink-0">✓</span>
                             <span className="text-sm text-text-primary">{pt}</span>
@@ -220,7 +225,7 @@ export default function CaseStudies() {
                         <div
                           key={j}
                           className="glass rounded-xl p-5 transition-opacity duration-300"
-                          style={{ opacity: activeCase === i && activeCheckmarks.includes(j) ? 1 : 0.3 }}
+                          style={{ opacity: isMobile || (activeCase === i && activeCheckmarks.includes(j)) ? 1 : 0.3 }}
                         >
                           <div className="font-mono font-bold text-2xl text-accent flex items-baseline gap-1">
                             {r.direction && <span className="text-sm text-text-muted">{r.direction}</span>}

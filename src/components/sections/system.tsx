@@ -231,7 +231,8 @@ export default function System() {
                 One page per concept. Hook, visual style, what we&apos;re claiming, call to action. You approve it. No surprises, no wasted work.
               </p>
               <div className="glass rounded-xl p-6 max-w-lg font-mono text-xs leading-relaxed border border-border">
-                <pre ref={typewriterRef} className="typewriter-cursor whitespace-pre-wrap text-accent/80" />
+                <pre ref={typewriterRef} className="typewriter-cursor whitespace-pre-wrap text-accent/80 hidden md:block" />
+                <pre className="whitespace-pre-wrap text-accent/80 md:hidden">{BRIEF_TEXT}</pre>
               </div>
             </div>
 
